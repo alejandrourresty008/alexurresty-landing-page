@@ -1,0 +1,2321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producción Audiovisual y Video Corporativo en Lima | Alex Urresty</title>
+  <meta name="description" content="Producción audiovisual en Lima para empresas: video corporativo, streaming en vivo, podcast y estrategia de contenido. Tecnología, telecom y sector legal.">
+  <meta name="keywords" content="producción audiovisual Lima, video corporativo Lima, videógrafo freelance Lima, video empresarial Perú, streaming eventos Lima, podcast corporativo Lima, contenido redes sociales empresas Lima, estrategia de contenido Lima, video B2B Lima, producción audiovisual sector legal, videos institucionales Lima">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Alex Urresty">
+  <meta name="theme-color" content="#0D1423">
+  <meta property="og:title" content="Producción Audiovisual en Lima | Alex Urresty">
+  <meta property="og:description" content="Video corporativo, streaming en vivo, podcast y estrategia de contenido para empresas de tecnología, telecom y sector legal en Lima.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alexurresty.com/">
+  <meta property="og:image" content="https://alexurresty.com/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_PE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="geo.region" content="PE-LIM">
+  <meta name="geo.placename" content="Lima, Perú">
+  <link rel="canonical" href="https://alexurresty.com/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230D1423'/%3E%3Ccircle cx='16' cy='16' r='6.5' fill='%23E5352E'/%3E%3C/svg%3E">
+
+  <!-- Tipografía servida desde la propia web (sin depender de servidores externos) -->
+  <link rel="preload" href="fonts/satoshi-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  <style>
+    @font-face { font-family: 'Satoshi'; src: url('fonts/satoshi-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Satoshi'; src: url('fonts/satoshi-500.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Satoshi'; src: url('fonts/satoshi-700.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Satoshi'; src: url('fonts/satoshi-900.woff2') format('woff2'); font-weight: 900; font-style: normal; font-display: swap; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0D1423;
+      --bg-2:      #101829;
+      --surface:   #151E31;
+      --surface-2: #1B2540;
+      --line:      rgba(242,240,236,0.08);
+      --line-2:    rgba(242,240,236,0.14);
+      --text:      #F2F0EC;
+      --muted:     #9298AC;
+      --accent:    #E5352E;
+      --accent-2:  #F04B44;
+      --accent-dim: rgba(229,53,46,0.12);
+
+      --font: 'Satoshi', system-ui, sans-serif;
+      --gutter: clamp(1.25rem, 5vw, 5rem);
+      --nav-h: 72px;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+
+      /* Escala de capas */
+      --z-hero-media: 0;
+      --z-hero-shade: 1;
+      --z-hero-content: 2;
+      --z-float: 150;
+      --z-nav: 200;
+      --z-modal: 500;
+      --z-grain: 900;
+      --z-intro: 1000;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, video { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button { font-family: inherit; }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    ::selection { background: var(--accent); color: #fff; }
+
+    /* Grano de película: textura fija y sutil */
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: var(--z-grain);
+      opacity: 0.05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .skip-link {
+      position: absolute;
+      left: var(--gutter);
+      top: -100px;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      z-index: calc(var(--z-intro) + 1);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    section { padding: clamp(5rem, 10vw, 9rem) var(--gutter) clamp(5.5rem, 11vw, 10rem); }
+
+    h1, h2, h3 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      padding: 0 var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: var(--z-nav);
+      transition: background 0.3s, border-color 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav.scrolled {
+      background: rgba(13,20,35,0.86);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom-color: var(--line);
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .brand-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.4s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); }
+    /* Sobre los videos del inicio, los enlaces se leen más claros */
+    .nav:not(.scrolled) .nav-links a { color: #D8DBE5; }
+
+    .nav-cta {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.6rem 1.15rem;
+      border-radius: 8px;
+      background: var(--accent);
+      transition: background 0.4s ease, transform 0.6s var(--ease-out);
+    }
+    .nav-cta:hover { background: var(--accent-2); }
+    .nav-cta:active { transform: scale(0.97); }
+
+    .hamburger {
+      display: none;
+      width: 44px; height: 44px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--text);
+      transition: transform 0.3s var(--ease-out), opacity 0.2s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(4px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
+
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      padding: 0.5rem var(--gutter) 1.5rem;
+      z-index: calc(var(--z-nav) - 1);
+      flex-direction: column;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-mobile a:last-child { border-bottom: none; color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100dvh;
+      display: flex;
+      align-items: flex-end;
+      padding-top: calc(var(--nav-h) + 2rem);
+      padding-bottom: clamp(3.5rem, 8vw, 7rem);
+      overflow: hidden;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      background: var(--bg);
+      z-index: var(--z-hero-media);
+    }
+
+    .hero-clip {
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .hero-clip:nth-child(2) { background: var(--surface-2); }
+
+    .hero-clip video {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    .hero-clip video.ready { opacity: 1; }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: var(--z-hero-shade);
+      pointer-events: none;
+      background:
+        linear-gradient(to bottom, rgba(13,20,35,0.66) 0%, rgba(13,20,35,0) 22%),
+        linear-gradient(to top, rgba(13,20,35,0.94) 0%, rgba(13,20,35,0.66) 40%, rgba(13,20,35,0.16) 100%),
+        linear-gradient(to right, rgba(13,20,35,0.5) 0%, transparent 62%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: var(--z-hero-content);
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 6.2vw, 6rem);
+      font-weight: 900;
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-title .accent { color: var(--accent); }
+
+    .hero-sub {
+      font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+      color: #C4C8D4;
+      max-width: 44ch;
+      line-height: 1.55;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1rem 1.6rem;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      border: none;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.4s ease, transform 0.7s var(--ease-out), box-shadow 0.6s ease;
+    }
+    .btn:hover {
+      background: var(--accent-2);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(229,53,46,0.55);
+    }
+    .btn:active { transform: translateY(0) scale(0.98); }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text);
+      border-bottom: 1px solid var(--line-2);
+      padding-bottom: 3px;
+      transition: border-color 0.4s ease, gap 0.6s var(--ease-out);
+    }
+    .text-link:hover { border-color: var(--text); gap: 0.7rem; }
+
+    /* ── ENCABEZADO DE SECCIÓN ── */
+    .section-head { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+
+    .section-title {
+      font-size: clamp(2.2rem, 5vw, 4.25rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    /* ── SERVICIOS: lista editorial ── */
+    .services { background: var(--bg-2); }
+
+    .service-list { list-style: none; border-top: 1px solid var(--line-2); margin: 0 -1.25rem; }
+
+    /*
+      Movimiento tipo iPhone: curva de resorte (arranca rápido, se pasa apenas
+      y se asienta) + "hundimiento" al presionar. Solo se animan transform y
+      opacity, nunca el tamaño o el padding, para que nada salte.
+    */
+    .service-row {
+      --spring: cubic-bezier(0.34, 1.3, 0.64, 1);
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 1.5rem 3rem;
+      padding: clamp(1.6rem, 3vw, 2.4rem) 1.25rem;
+      border-bottom: 1px solid var(--line-2);
+      cursor: pointer;
+      position: relative;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 0.55s var(--spring);
+    }
+    @supports (transition-timing-function: linear(0, 1)) {
+      .service-row {
+        --spring: linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.6%, 1);
+      }
+    }
+
+    .service-row::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 14px;
+      background: var(--surface);
+      opacity: 0;
+      transform: scale(0.98);
+      transition: opacity 0.35s ease, transform 0.6s var(--spring);
+      z-index: -1;
+    }
+
+    .service-row:hover::before,
+    .service-row:focus-visible::before { opacity: 1; transform: none; }
+
+    /* Al presionar: se hunde un poco, como un botón de iOS */
+    .service-row:active {
+      transform: scale(0.985);
+      transition-duration: 0.12s;
+      transition-timing-function: ease-out;
+    }
+
+    .service-name {
+      font-size: clamp(1.6rem, 3.4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      transition: color 0.45s ease, transform 0.7s var(--spring);
+    }
+    .service-row:hover .service-name { color: var(--accent); transform: translateX(4px); }
+
+    /* Ícono del servicio: se dibuja trazo a trazo al aparecer y hace un gesto con resorte al pasar el mouse */
+    .service-name { display: flex; align-items: center; gap: clamp(0.75rem, 1.5vw, 1.1rem); }
+    .service-icon {
+      flex: none;
+      width: clamp(34px, 3.2vw, 46px); height: clamp(34px, 3.2vw, 46px);
+      color: var(--muted);
+      transition: color 0.45s ease, transform 0.7s var(--spring);
+    }
+    .service-icon svg { width: 100%; height: 100%; display: block; }
+    .service-icon path { stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; }
+    .service-row.seen .service-icon path { animation: icon-draw 1.5s cubic-bezier(0.65, 0, 0.35, 1) forwards; }
+    .service-row.seen .service-icon path:nth-child(2) { animation-delay: 0.18s; }
+    .service-row.seen .service-icon path:nth-child(3) { animation-delay: 0.36s; }
+    .service-row.seen .service-icon path:nth-child(4) { animation-delay: 0.54s; }
+    @keyframes icon-draw { from { opacity: 0; } 3% { opacity: 1; } to { stroke-dashoffset: 0; opacity: 1; } }
+    .service-row:hover .service-icon { color: var(--accent); transform: scale(1.12); }
+    .service-row:active .service-icon { transform: scale(0.94); transition-duration: 0.12s; }
+
+    .service-desc {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 46ch;
+    }
+
+    .service-go {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--line-2);
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      transition: border-color 0.3s ease, transform 0.6s var(--spring);
+    }
+
+    /* El relleno rojo crece desde el centro con resorte */
+    .service-go::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: scale(0);
+      transition: transform 0.55s var(--spring);
+      z-index: -1;
+    }
+
+    .service-go svg {
+      width: 18px; height: 18px;
+      transition: transform 0.6s var(--spring);
+    }
+
+    .service-row:hover .service-go { border-color: var(--accent); transform: scale(1.06); }
+    .service-row:hover .service-go::before { transform: scale(1); }
+    .service-row:hover .service-go svg { transform: translateX(2px); }
+    .service-row:active .service-go { transform: scale(0.92); transition-duration: 0.12s; }
+
+    /* ── PROYECTOS ── */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter {
+      background: none;
+      border: none;
+      padding: 0.35rem 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: color 0.4s ease, border-color 0.4s ease;
+    }
+    .filter:hover { color: var(--text); }
+    .filter.active { color: var(--text); border-color: var(--accent); }
+    .filter sup { font-size: 0.7em; margin-left: 2px; opacity: 0.6; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(1.25rem, 2.5vw, 2.25rem);
+    }
+
+    /* Proyectos con el estilo de la portada: cada servicio es un panel a pantalla completa, de borde a borde,
+       con sus videos en columnas verticales separadas por una línea fina. Cada panel tiene su propio alto y ancho
+       y hay aire entre paneles, así nada se encima. */
+    .project-rows { display: grid; gap: clamp(2.5rem, 5vw, 4rem); }
+    .pbento {
+      position: relative;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      height: 100svh;
+      min-height: 560px;
+      max-height: 1000px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .bento { position: absolute; inset: 0; display: flex; gap: 3px; }
+    .tile {
+      position: relative;
+      flex: 1 1 0;
+      min-width: 0;
+      overflow: hidden;
+      background: var(--surface);
+      cursor: pointer;
+      isolation: isolate;
+      -webkit-tap-highlight-color: transparent;
+      transition: opacity 0.6s ease;
+    }
+    .tile img, .tile .pv {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: 50% var(--focus, 45%);
+      transition: transform 1.4s var(--ease-out), opacity 0.6s ease;
+    }
+    .tile .pv { opacity: 0; }
+    .tile.previewing .pv.ready { opacity: 1; }
+    .tile:hover img, .tile:hover .pv { transform: scale(1.03); }
+    /* Al pasar por un video, los demás se atenúan un poco */
+    @media (hover: hover) {
+      .bento:hover .tile:not(:hover) { opacity: 0.55; }
+    }
+    /* Sombra como la portada: arriba para el título del servicio, abajo para el nombre de cada pieza */
+    .tile::after {
+      content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background:
+        linear-gradient(to bottom, rgba(13,20,35,0.72) 0%, rgba(13,20,35,0) 26%),
+        linear-gradient(to top, rgba(13,20,35,0.9) 0%, rgba(13,20,35,0.35) 28%, rgba(13,20,35,0) 50%);
+      transition: opacity 0.6s ease;
+    }
+    .tile.previewing::after { opacity: 0.75; }
+
+    .pbento-head {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 3;
+      padding: clamp(1.5rem, 3.5vw, 3rem) var(--gutter);
+      pointer-events: none;
+    }
+    .prow-title {
+      font-size: clamp(2.2rem, 5.4vw, 5rem);
+      font-weight: 900;
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+    }
+    .prow-note { color: #D8DBE5; margin-top: 0.6rem; font-size: clamp(0.95rem, 1.2vw, 1.1rem); text-shadow: 0 1px 12px rgba(0,0,0,0.5); }
+
+    .tile-badge {
+      position: absolute; right: 12px; bottom: 14px; z-index: 2;
+      padding: 0.3rem 0.65rem; border-radius: 999px;
+      font-size: 0.74rem; font-weight: 500;
+      background: rgba(13,20,35,0.55);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      color: var(--text);
+    }
+    .tile-info { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 1rem 1.1rem 3.2rem; }
+    .tile-meta { font-size: 0.8rem; color: #D8DBE5; margin-bottom: 0.2rem; }
+    .tile-title { font-size: clamp(1rem, 1.35vw, 1.25rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: var(--text); }
+    .tile-go {
+      position: absolute; left: 1.1rem; bottom: 14px; z-index: 2;
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.85rem; font-weight: 500; color: var(--text);
+      transition: color 0.4s ease;
+    }
+    .tile-go::before { content: 'Ver'; }
+    .tile-go svg { width: 15px; height: 15px; transition: transform 0.6s var(--spring); }
+    .tile:hover .tile-go { color: var(--accent); }
+    .tile:hover .tile-go svg { transform: translateX(3px); }
+    .tile:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+    /* Escritorio: el título del servicio va en su propia franja, encima del panel; los videos siguen ocupando
+       toda la pantalla de borde a borde, como la portada. No toca el celular (max-width: 760px). */
+    @media (min-width: 761px) {
+      .pbento { height: auto; min-height: 0; max-height: none; overflow: visible; display: flex; flex-direction: column; }
+      .pbento-head { position: static; order: -1; padding: 0 var(--gutter) clamp(1.25rem, 2.5vw, 2rem); pointer-events: auto; }
+      .pbento-head > * { max-width: 1280px; margin-left: auto; margin-right: auto; }
+      .prow-title { text-shadow: none; }
+      .prow-note { color: var(--muted); text-shadow: none; }
+      .bento { position: relative; inset: auto; height: 100svh; min-height: 560px; max-height: 1000px; }
+      .tile::after { background: linear-gradient(to top, rgba(13,20,35,0.9) 0%, rgba(13,20,35,0.35) 28%, rgba(13,20,35,0) 50%); }
+    }
+
+    /* Celular: el panel sigue ocupando la pantalla; las piezas se reparten en dos columnas sin huecos */
+    @media (max-width: 760px) {
+      .pbento { max-height: none; }
+      .bento { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; }
+      .bento.n1 .tile, .bento.n3 .tile:first-child { grid-column: 1 / -1; }
+      .bento.n2 { grid-template-columns: 1fr 1fr; }
+      .tile-info { padding: 0.8rem 0.85rem 2.8rem; }
+      .tile-meta { font-size: 0.74rem; }
+      .tile-title { font-size: 0.98rem; }
+      .tile-go { left: 0.85rem; bottom: 12px; }
+      .tile-badge { right: 8px; bottom: 10px; }
+    }
+
+    .project { cursor: pointer; -webkit-tap-highlight-color: transparent; display: flex; flex-direction: column; }
+    .project .project-text { margin-bottom: 0.9rem; }
+    .project .project-cta { margin-top: auto; align-self: flex-start; } /* el enlace queda alineado en toda la fila */
+    .project:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 14px; }
+    .project-count {
+      position: absolute; left: 12px; bottom: 12px;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.78rem; font-weight: 500;
+      background: rgba(13,20,35,0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--text);
+    }
+    .project .project-cta svg { width: 14px; height: 14px; }
+    .project-thumb .pv { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.6s ease; }
+    /* Encuadre: menos techo; cada tarjeta puede fijar su foco con --focus */
+    .project-thumb img, .project-thumb .pv { object-position: 50% var(--focus, 62%); }
+    .project.previewing .pv.ready { opacity: 1; }
+    .project:hover .project-cta { color: var(--accent); border-color: var(--accent); }
+    .project:hover .project-cta svg { transform: translateX(3px); }
+    .client-tags { color: var(--text); font-weight: 500; font-size: 0.95rem; }
+    .project-link { display: block; color: inherit; text-decoration: none; cursor: pointer; }
+    .project-cta {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      margin-top: 0.9rem;
+      font-size: 0.92rem; font-weight: 500;
+      color: var(--text);
+      border-bottom: 1px solid rgba(242,240,236,0.25);
+      padding-bottom: 2px;
+      transition: color 0.4s ease, border-color 0.4s ease;
+    }
+    .project-cta svg { width: 14px; height: 14px; transition: transform 0.6s var(--spring); }
+    .project-link:hover .project-cta { color: var(--accent); border-color: var(--accent); }
+    .project-link:hover .project-cta svg { transform: translate(2px, -2px); }
+    .project-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 14px; }
+
+    .project-thumb {
+      aspect-ratio: 4/5;
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--surface);
+      position: relative;
+      margin-bottom: 1.1rem;
+    }
+
+    .project-thumb img,
+    .project-thumb video {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease-out);
+    }
+    .project:hover .project-thumb img,
+    .project:hover .project-thumb video { transform: scale(1.04); }
+
+    .project-thumb .pending {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .project-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-text {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .projects-empty {
+      color: var(--muted);
+      padding: 2rem 0;
+    }
+    .projects-empty[hidden] { display: none; }
+    .projects-empty a { color: var(--text); font-weight: 700; }
+
+    /* ── SOBRE MÍ ── */
+    .about { background: var(--bg-2); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(2.5rem, 7vw, 7rem);
+      align-items: center;
+    }
+
+    .about-photo {
+      aspect-ratio: 4/5;
+      border-radius: 18px;
+      background: var(--surface);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      position: relative;
+    }
+
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .about-text .section-title { margin-bottom: 2rem; }
+
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: #BFC3CF;
+      max-width: 58ch;
+      margin-bottom: 1.25rem;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-text .lead {
+      font-size: clamp(1.25rem, 2vw, 1.5rem);
+      line-height: 1.45;
+      color: var(--text);
+      font-weight: 500;
+      letter-spacing: -0.015em;
+    }
+
+    /* ── CONTACTO ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+      gap: clamp(2.5rem, 7vw, 7rem);
+      align-items: start;
+    }
+
+    .contact-aside .section-title { margin-bottom: 1.5rem; }
+
+    .contact-aside p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 36ch;
+      margin-bottom: 2.5rem;
+    }
+
+    .direct { list-style: none; border-top: 1px solid var(--line-2); }
+    .direct li { border-bottom: 1px solid var(--line-2); }
+
+    .direct a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.15rem 0;
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      transition: color 0.4s ease, transform 0.7s var(--ease-out);
+    }
+    .direct a span { color: var(--muted); font-weight: 500; font-size: 0.95rem; letter-spacing: 0; }
+    .direct a:hover { color: var(--accent); transform: translateX(6px); }
+
+    .form {
+      background: var(--surface);
+      border-radius: 18px;
+      padding: clamp(1.5rem, 3.5vw, 2.75rem);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .field { margin-bottom: 1.35rem; }
+
+    .field label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #C4C8D4;
+      margin-bottom: 0.5rem;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      font: inherit;
+      font-size: 1rem;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--line-2);
+      border-radius: 10px;
+      outline: none;
+      transition: border-color 0.35s ease, box-shadow 0.35s ease;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder { color: #6D7389; }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+
+    .field textarea { min-height: 140px; resize: vertical; }
+
+    .field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239298AC' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.75rem;
+      cursor: pointer;
+    }
+
+    .form .btn { width: 100%; justify-content: center; margin-top: 0.5rem; }
+    .form .btn[disabled] { opacity: 0.7; cursor: wait; transform: none; }
+
+    .form-error {
+      color: var(--accent-2);
+      font-size: 0.95rem;
+      margin-top: 1rem;
+    }
+    .form-error[hidden] { display: none; }
+
+    .form-done {
+      background: var(--surface);
+      border-radius: 18px;
+      padding: clamp(2rem, 5vw, 3.5rem);
+    }
+    .form-done[hidden] { display: none; }
+    .form-done h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+    .form-done p { color: var(--muted); }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 2.5rem var(--gutter);
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem 2rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-links { display: flex; gap: 1.75rem; }
+    .footer-links a { text-decoration: none; transition: color 0.4s ease; }
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── WHATSAPP FLOTANTE ── */
+    .wa-float {
+      position: fixed;
+      right: clamp(1rem, 2.5vw, 2rem);
+      bottom: clamp(1rem, 2.5vw, 2rem);
+      z-index: var(--z-float);
+      width: 56px; height: 56px;
+      border-radius: 16px;
+      background: #25D366;
+      color: #0B2A17;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 14px 30px -12px rgba(37,211,102,0.6);
+      transition: transform 0.3s var(--ease-out), opacity 0.3s;
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+    }
+    .wa-float.show { opacity: 1; transform: none; pointer-events: auto; }
+    .wa-float:hover { transform: translateY(-3px); }
+    .wa-float svg { width: 28px; height: 28px; }
+
+    /* ── VOLVER AL INICIO (encima de WhatsApp) ── */
+    .to-top {
+      --spring: cubic-bezier(0.34, 1.3, 0.64, 1);
+      position: fixed;
+      right: clamp(1rem, 2.5vw, 2rem);
+      bottom: calc(clamp(1rem, 2.5vw, 2rem) + 56px + 12px);
+      z-index: var(--z-float);
+      width: 56px; height: 56px;
+      border-radius: 16px;
+      background: rgba(21,30,49,0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--line-2);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      -webkit-tap-highlight-color: transparent;
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: opacity 0.5s ease, transform 0.6s var(--spring), border-color 0.4s ease, background 0.4s ease;
+    }
+    @supports (transition-timing-function: linear(0, 1)) {
+      .to-top {
+        --spring: linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.6%, 1);
+      }
+    }
+    /* Aparece un instante después que WhatsApp, para que entren escalonados */
+    .to-top.show { opacity: 1; transform: none; pointer-events: auto; transition-delay: 0.08s; }
+    .to-top:hover { border-color: var(--text); background: var(--surface-2); transform: translateY(-3px); transition-delay: 0s; }
+    .to-top:active { transform: scale(0.92); transition-duration: 0.12s; }
+    .to-top svg { width: 20px; height: 20px; transition: transform 0.6s var(--spring); }
+    .to-top:hover svg { transform: translateY(-2px); }
+
+    /* ── VENTANA DE SERVICIO ── */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(6,10,20,0.82);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: var(--z-modal);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .overlay.open { opacity: 1; pointer-events: auto; }
+
+    /* Ventana tipo feed: el video ocupa casi toda la pantalla y la descripción va encima, abajo.
+       Al tocar la descripción se expande con el detalle y el botón de cotizar. */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: calc(var(--z-modal) + 1);
+      display: grid;
+      place-items: center;
+      pointer-events: none;
+    }
+    .modal[hidden] { display: none; }
+
+    .modal-stage {
+      position: relative;
+      height: min(92dvh, 960px);
+      aspect-ratio: 9 / 16;
+      max-width: 100vw;
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--surface);
+      box-shadow: 0 40px 100px -20px rgba(0,0,0,0.7);
+      opacity: 0;
+      transform: translateY(18px) scale(0.97);
+      transition: opacity 0.3s ease, transform 0.6s var(--ease-out);
+    }
+    .modal.open { pointer-events: auto; }
+    .modal.open .modal-stage { opacity: 1; transform: none; }
+
+    .modal-video { position: absolute; inset: 0; }
+    .modal-video video { width: 100%; height: 100%; object-fit: cover; }
+    .modal-video .pending { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 0.9rem; }
+
+    .modal-close {
+      position: fixed;
+      top: 1rem; right: 1rem;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(242,240,236,0.28);
+      background: rgba(13,20,35,0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      z-index: 5;
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.6s var(--spring);
+    }
+    .modal-close:hover { background: var(--accent); border-color: var(--accent); transform: scale(1.06); }
+    .modal-close svg { width: 16px; height: 16px; }
+
+    /* En la ventana, el sonido va arriba a la izquierda para no chocar con la descripción */
+    .modal .vp-sound { top: 14px; left: 14px; right: auto; bottom: auto; }
+    .modal .car-dots { top: 20px; }
+    .modal .vp-bar { z-index: 4; }
+
+    .modal-info {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      z-index: 3;
+      padding: 3.5rem 1.25rem 1.2rem;
+      max-height: 78%;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: none;
+      background: linear-gradient(to top, rgba(8,12,22,0.62) 0%, rgba(8,12,22,0.3) 55%, rgba(8,12,22,0) 100%);
+      text-shadow: 0 1px 10px rgba(0,0,0,0.55); /* el texto se lee sin tapar el video */
+      cursor: pointer;
+      transition: background 0.5s ease;
+    }
+    .modal-info::-webkit-scrollbar { display: none; }
+    .modal-info.expanded {
+      padding-top: 2.5rem;
+      background: linear-gradient(to top, rgba(8,12,22,0.97) 0%, rgba(8,12,22,0.9) 75%, rgba(8,12,22,0.6) 100%);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      cursor: default;
+    }
+
+    .modal-title {
+      font-size: clamp(1.35rem, 2.4vw, 1.6rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 0.45rem;
+    }
+    .modal-desc {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .modal-desc p { color: #D8DBE5; font-size: 0.95rem; line-height: 1.55; margin-bottom: 0.6rem; }
+    .modal-desc .client-tags { color: var(--text); }
+    .modal-info.expanded .modal-desc { display: block; overflow: visible; }
+
+    .modal-more {
+      background: none; border: 0; padding: 0.15rem 0;
+      color: var(--text); font: inherit; font-size: 0.9rem; font-weight: 700;
+      cursor: pointer;
+    }
+    .modal-more::after { content: ' ▾'; font-size: 0.8em; }
+    .modal-info.expanded .modal-more::after { content: ' ▴'; }
+
+    .modal-extra { display: none; }
+    .modal-info.expanded .modal-extra { display: block; animation: extra-in 0.6s var(--ease-out); }
+    @keyframes extra-in { from { opacity: 0; transform: translateY(8px); } }
+    .modal-includes { color: var(--muted); font-size: 0.9rem; margin: 0.9rem 0 1.1rem; }
+
+    /* El texto entra un instante después del video */
+    .modal-info > * { opacity: 0; transform: translateY(8px); transition: opacity 0s, transform 0s; }
+    .modal.open .modal-info > * { opacity: 1; transform: none; transition: opacity 0.7s ease 0.25s, transform 0.9s var(--ease-out) 0.25s; }
+
+    /* Video horizontal: la ventana toma su forma 16:9 */
+    .modal.landscape .modal-stage { aspect-ratio: 16 / 9; height: auto; width: min(1180px, 94vw); max-height: 88dvh; }
+    .modal.landscape .modal-info { max-height: 70%; }
+
+    @media (max-width: 640px) {
+      .modal-stage { height: 100dvh; width: 100vw; aspect-ratio: auto; border-radius: 0; }
+      .modal.landscape .modal-stage { width: 100vw; height: auto; border-radius: 0; }
+      .modal-info { padding-bottom: calc(1.4rem + env(safe-area-inset-bottom)); }
+    }
+
+    /* ── PANTALLA DE ENTRADA ── */
+    .intro {
+      position: fixed;
+      inset: 0;
+      z-index: var(--z-intro);
+      background: var(--bg);
+      display: grid;
+      place-items: center;
+      padding: 0 var(--gutter);
+      cursor: pointer;
+      transition: transform 0.95s var(--ease-in-out);
+    }
+    .intro.leaving { transform: translateY(-100%); }
+
+    .intro-name {
+      font-size: clamp(3.2rem, 12vw, 11rem);
+      font-weight: 900;
+      letter-spacing: -0.055em;
+      line-height: 0.9;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: intro-in 0.9s var(--ease-out) 0.1s forwards;
+    }
+
+    @keyframes intro-in { to { opacity: 1; transform: none; } }
+
+    /*
+      ── APARICIÓN AL HACER SCROLL ──
+      Suave: recorrido corto, desenfoque que se aclara y curva que frena
+      lentamente al final (sin golpes).
+    */
+    /* Aparece al entrar en pantalla y se desvanece al salir, muy sutil */
+    .reveal {
+      opacity: 0;
+      transform: translateY(10px);
+      filter: blur(4px);
+      transition: opacity 0.9s ease, transform 1.1s var(--ease-out), filter 0.9s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; filter: none; }
+    .d1 { transition-delay: 0.12s; }
+    .d2 { transition-delay: 0.24s; }
+    .d3 { transition-delay: 0.36s; }
+    .d4 { transition-delay: 0.48s; }
+
+    /* Titular del inicio: cada línea sube desde detrás de una máscara */
+    .hero-title.reveal { opacity: 1; transform: none; filter: none; }
+    .hero-title .line { display: block; overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .hero-title .line > span {
+      display: inline-block;
+      transform: translateY(105%);
+      transition: transform 1.4s var(--ease-out);
+    }
+    .hero-title .line:nth-child(2) > span { transition-delay: 0.12s; }
+    .hero-title.visible .line > span { transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-media { grid-template-columns: 1fr; }
+      .hero-clip { grid-area: 1 / 1; opacity: 0; transition: opacity 0.9s ease; } /* en celular los clips se turnan */
+      .hero-clip.on { opacity: 1; }
+
+      .service-row { grid-template-columns: minmax(0, 1fr) auto; }
+      .service-desc { grid-column: 1 / -1; grid-row: 2; }
+
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-photo { max-width: 420px; }
+    }
+
+
+    @media (max-width: 640px) {
+      .wa-float, .to-top { width: 48px; height: 48px; border-radius: 14px; }
+      .wa-float svg { width: 24px; height: 24px; }
+      .to-top { bottom: calc(clamp(1rem, 2.5vw, 2rem) + 48px + 10px); }
+      .form-row { grid-template-columns: 1fr; }
+      .service-go { width: 40px; height: 40px; }
+      .service-row { column-gap: 1rem; }
+      .service-icon { width: 30px; height: 30px; }
+      .service-name { gap: 0.6rem; }
+
+    }
+
+
+    /* ── CARRUSEL DE VIDEOS ── */
+    .carousel { position: relative; width: 100%; height: 100%; }
+    .car-track { position: relative; width: 100%; height: 100%; overflow: hidden; touch-action: pan-y; }
+    /* Los videos van en fila: al cambiar, todos se deslizan juntos hacia el costado */
+    .car-slide {
+      position: absolute; inset: 0;
+      transform: translate3d(calc(var(--pos, 0) * 100%), 0, 0);
+      opacity: calc(1 - (var(--pos, 0) * var(--pos, 0)) * 0.6);
+      transition: transform 1.25s cubic-bezier(0.32, 0.72, 0, 1), opacity 0.9s ease;
+      will-change: transform;
+    }
+    .car-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .car-link {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      display: flex; flex-direction: column; gap: 0.35rem;
+      padding: 3rem 1.1rem 1.1rem;
+      background: linear-gradient(to top, rgba(13,20,35,0.92), rgba(13,20,35,0));
+      color: var(--text); text-decoration: none;
+    }
+    .car-link span { font-size: 0.9rem; color: #D8DBE5; line-height: 1.4; }
+    .car-link b { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; transition: color 0.4s ease; }
+    .car-link b svg { width: 14px; height: 14px; transition: transform 0.6s var(--spring); }
+    .car-link:hover b { color: var(--accent); }
+    .car-link:hover b svg { transform: translate(2px, -2px); }
+    .carousel.single .car-btn, .carousel.single .car-dots { display: none; }
+    .vp { position: relative; width: 100%; height: 100%; }
+    .vp video { cursor: pointer; }
+    .vp-sound {
+      position: absolute; right: 12px; bottom: 16px; z-index: 2;
+      width: 40px; height: 40px;
+      display: grid; place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(242,240,236,0.28);
+      background: rgba(13,20,35,0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--text);
+      cursor: pointer;
+      transition: transform 0.6s var(--spring), background 0.4s ease;
+    }
+    .vp-sound svg { width: 18px; height: 18px; }
+    .vp-sound:hover { background: var(--accent); border-color: var(--accent); transform: scale(1.08); }
+    .vp-sound:active { transform: scale(0.92); }
+    .vp-bar { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: rgba(242,240,236,0.16); z-index: 2; pointer-events: none; }
+    .vp-bar i { display: block; height: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.25s linear; }
+    .vp::after {
+      content: ''; position: absolute; left: 50%; top: 50%;
+      width: 64px; height: 64px; margin: -32px 0 0 -32px;
+      border-radius: 50%;
+      background: rgba(13,20,35,0.5) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F2F0EC'%3E%3Cpath d='M9 6.5v11a.6.6 0 0 0 .9.5l8.8-5.5a.6.6 0 0 0 0-1L9.9 6a.6.6 0 0 0-.9.5z'/%3E%3C/svg%3E") center / 26px no-repeat;
+      opacity: 0; transform: scale(0.85);
+      transition: opacity 0.35s ease, transform 0.5s var(--spring);
+      pointer-events: none;
+    }
+    .vp.paused::after { opacity: 1; transform: none; }
+    .car-slide video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .car-btn {
+      position: absolute; top: 50%;
+      width: 40px; height: 40px; margin-top: -20px;
+      display: grid; place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(242,240,236,0.28);
+      background: rgba(13,20,35,0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--text);
+      cursor: pointer;
+      z-index: 2;
+      -webkit-tap-highlight-color: transparent;
+      transition: opacity 0.5s ease, transform 0.7s var(--ease-out), background 0.4s ease, border-color 0.4s ease;
+    }
+    .car-btn svg { width: 18px; height: 18px; }
+    .car-btn.prev { left: 10px; }
+    .car-btn.next { right: 10px; }
+    .car-btn:hover:not(:disabled) { background: var(--accent); border-color: var(--accent); transform: scale(1.1); }
+    .car-btn:active:not(:disabled) { transform: scale(0.92); transition-duration: 0.12s; }
+    .car-btn:disabled { opacity: 0; pointer-events: none; }
+
+    .car-dots { position: absolute; top: 6px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; z-index: 2; pointer-events: none; }
+    .car-dots button {
+      pointer-events: auto;
+      width: 34px; height: 20px; padding: 8px 0;
+      border: 0; border-radius: 6px;
+      background: rgba(242,240,236,0.4);
+      background-clip: content-box;
+      cursor: pointer;
+      transform: scaleX(0.55);
+      transition: background 0.4s ease, transform 0.6s var(--ease-out);
+    }
+    .car-dots button.on { transform: none; background-color: var(--text); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .car-slide { transition: none; }
+      html { scroll-behavior: auto; }
+      .reveal, .modal-info > * { opacity: 1; transform: none; filter: none; }
+      .modal-stage { transition: opacity 0.3s ease; transform: none; }
+      .service-icon path { stroke-dashoffset: 0; opacity: 1; }
+      .hero-title .line > span { transform: none; }
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        transition-delay: 0s !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- PANTALLA DE ENTRADA -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <span class="intro-name">Alex Urresty</span>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#top" class="brand" aria-label="Alex Urresty, inicio">
+      <span class="brand-name">Alex Urresty</span>
+      <span class="brand-sub">Producción audiovisual</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+      </ul>
+    </nav>
+    <a href="#contacto" class="nav-cta">Contáctame</a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#proyectos">Proyectos</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#contacto">Contáctame</a>
+  </div>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <!-- Mosaico: poner la ruta de cada clip en data-src (ej. videos/hero-1.mp4) -->
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-clip"><video muted loop playsinline preload="none" data-src="videos/hero-1.mp4"></video></div>
+        <div class="hero-clip"><video muted loop playsinline preload="none" data-src="videos/hero-3.mp4"></video></div>
+        <div class="hero-clip"><video muted loop playsinline preload="none" data-src="videos/hero-2.mp4"></video></div>
+      </div>
+
+      <div class="hero-inner">
+        <h1 class="hero-title reveal">
+          <span class="line"><span>Entiendo tu industria.</span></span>
+          <span class="line"><span><span class="accent">Produzco</span> tu historia.</span></span>
+        </h1>
+        <p class="hero-sub reveal d2">Producción y dirección audiovisual en Lima para empresas de tecnología, telecom y sector legal. Más de 5 años de experiencia.</p>
+        <div class="hero-actions reveal d3">
+          <a href="#contacto" class="btn">Contáctame</a>
+          <a href="#proyectos" class="text-link">Ver proyectos <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title reveal">Proyectos</h2>
+        </div>
+        <div class="project-rows" id="project-rows">
+          <!-- Renderizado por JS: una fila por servicio -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="services" id="servicios">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title reveal">Servicios</h2>
+        </div>
+        <ul class="service-list" id="service-list">
+          <!-- Renderizado por JS -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="about" id="sobre-mi">
+      <div class="wrap about-grid">
+        <div class="about-photo reveal">
+          <img src="img/alex.webp" alt="Alex Urresty con intercom durante un evento en el natatorio" loading="lazy" decoding="async" width="800" height="1000">
+        </div>
+        <div class="about-text">
+          <h2 class="section-title reveal">Detrás de la cámara</h2>
+          <p class="lead reveal d1">Alex Urresty dirige producciones audiovisuales en Lima para empresas de telecomunicaciones, tecnología y educación legal.</p>
+          <p class="reveal d2">El trabajo empieza antes de grabar: entender qué necesita comunicar la marca y a quién. Después vienen el formato y el tono, la grabación, la edición y una entrega lista para publicar.</p>
+          <p class="reveal d3">Fuera de cámara, baila y enseña marinera desde niño, con la misma disciplina que pone en una línea de tiempo de edición.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <div class="wrap contact-grid">
+        <div class="contact-aside">
+          <h2 class="section-title reveal">Contáctame</h2>
+          <p class="reveal d1">Escribe por el formulario o directo por WhatsApp: video corporativo, streaming, podcast o estrategia de contenido.</p>
+          <ul class="direct reveal d2">
+            <li><a href="https://wa.me/51943214652?text=Hola%20Alex%2C%20vi%20tu%20web%20y%20quiero%20contarte%20sobre%20un%20proyecto." target="_blank" rel="noopener">WhatsApp <span>+51 943 214 652</span></a></li>
+            <li><a href="mailto:alexrenato_008@hotmail.es">Email <span>alexrenato_008@hotmail.es</span></a></li>
+            <li><a href="https://www.instagram.com/alex.urresty/" target="_blank" rel="noopener">Instagram <span>@alex.urresty</span></a></li>
+          </ul>
+        </div>
+
+        <div class="reveal d1">
+          <form class="form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="tu@empresa.com" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="telefono">Teléfono / WhatsApp</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+51 999 999 999" autocomplete="tel" required>
+              </div>
+              <div class="field">
+                <label for="tipo">Tipo de proyecto</label>
+                <select id="tipo" name="tipo" required>
+                  <option value="" disabled selected>Elige uno</option>
+                  <option value="Video corporativo">Video corporativo</option>
+                  <option value="Estrategia de contenido">Estrategia de contenido</option>
+                  <option value="Streaming">Streaming</option>
+                  <option value="Podcast">Podcast</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Qué necesitas, para cuándo y para qué empresa." required></textarea>
+            </div>
+            <button type="submit" class="btn">Enviar mensaje</button>
+            <p class="form-error" id="form-error" role="alert" hidden></p>
+          </form>
+
+          <div class="form-done" id="form-done" hidden>
+            <h3>Mensaje recibido</h3>
+            <p>Gracias. La respuesta llegará pronto por email o WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 Alex Urresty · Lima, Perú</span>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/alex.urresty/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@prod.alexurresty" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- VOLVER AL INICIO -->
+  <a class="to-top" id="to-top" href="#top" aria-label="Volver al inicio">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 16V4M4.5 9.5L10 4l5.5 5.5"/></svg>
+  </a>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a class="wa-float" id="wa-float" href="https://wa.me/51943214652?text=Hola%20Alex%2C%20vi%20tu%20web%20y%20quiero%20contarte%20sobre%20un%20proyecto." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L0 24l6.336-1.51A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.812 9.812 0 01-5.007-1.374l-.36-.214-3.727.888.906-3.633-.235-.374A9.822 9.822 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+  </a>
+
+  <!-- VENTANA DE SERVICIO -->
+  <div class="overlay" id="overlay"></div>
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <button class="modal-close" id="modal-close" aria-label="Cerrar">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg>
+    </button>
+    <div class="modal-stage" id="modal-body">
+      <div class="modal-video" id="modal-video"></div>
+      <div class="modal-info" id="modal-info">
+        <h2 class="modal-title" id="modal-title"></h2>
+        <div class="modal-desc" id="modal-desc"></div>
+        <button class="modal-more" id="modal-more" type="button" aria-expanded="false">Ver más</button>
+        <div class="modal-extra">
+          <p class="modal-includes" id="modal-includes"></p>
+          <a href="#contacto" class="btn" id="modal-cta">Cotizar este servicio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    'use strict';
+
+    // Al recargar, la página vuelve siempre arriba (el navegador no recuerda la posición)
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    window.scrollTo(0, 0);
+
+    /* ─── CONTENIDO ─── */
+    const SERVICES = [
+      {
+        id: 'corporativo',
+        title: 'Video corporativo',
+        short: 'Entrevistas, instalaciones, demos de producto y eventos. Piezas que muestran con claridad lo que hace tu empresa.',
+        includes: 'Incluye videos institucionales, testimonios, demos y eventos.',
+        long: [
+          'Grabación y edición de contenido corporativo: entrevistas, recorridos de instalaciones, demos de producto y cobertura de eventos.',
+          'Antes de encender la cámara, el primer paso es entender el negocio. Cada pieza tiene un objetivo concreto: generar confianza, explicar lo que haces o abrir una conversación comercial.',
+          'Entregables: videos institucionales, testimonios de clientes, recorridos, demos técnicas y resúmenes de eventos, con fechas claras desde el inicio.'
+        ],
+        video: 'videos/corporativo.mp4',
+        poster: 'videos/corporativo.webp',
+        landscape: true
+      },
+      {
+        id: 'redes',
+        title: 'Estrategia de contenido',
+        short: 'Qué publicar, para quién y para qué: estrategia, guiones y producción continua para vender, educar o posicionar tu marca.',
+        includes: 'Incluye estrategia, calendario, guiones, grabación y edición para Reels, TikTok y Shorts.',
+        long: [
+          'El punto de partida es qué quiere lograr tu marca en redes y a quién le habla. Desde ahí salen el formato, la frecuencia y la plataforma.',
+          'Un sistema de trabajo claro: análisis de audiencia, formatos que ya funcionan y producción constante.',
+          'Entregables: guiones, grabación y edición de Reels, TikTok y YouTube Shorts, con calendario de publicación.'
+        ],
+        // Carrusel: legal, educación legal, restaurante, tecnología, producto
+        videos: [
+          { src: 'videos/redes-4.mp4', poster: 'videos/redes-4.webp' },
+          { src: 'videos/redes-egepud.mp4', poster: 'videos/redes-egepud.webp' },
+          { src: 'videos/riverita-leche-de-tigre.mp4', poster: 'videos/riverita-leche-de-tigre.webp' },
+          { src: 'videos/redes-2.mp4', poster: 'videos/redes-2.webp' },
+          { src: 'videos/redes-3.mp4', poster: 'videos/redes-3.webp' }
+        ]
+      },
+      {
+        id: 'streaming',
+        title: 'Streaming',
+        short: 'Transmisiones para eventos, lanzamientos y clases, con montaje técnico y dirección en tiempo real.',
+        includes: 'Para eventos, lanzamientos y clases, con montaje multicámara.',
+        long: [
+          'Producción de transmisiones para eventos, lanzamientos de producto y clases en línea.',
+          'En una transmisión no hay segunda toma. Por eso cada emisión sale al aire con señal, imagen y audio probados de antemano, y con equipos conocidos a fondo.',
+          'Entregables: producción del evento, dirección en tiempo real, configuración de YouTube, Zoom, StreamYard u OBS, y la grabación para publicar después.'
+        ],
+        video: 'videos/streaming.mp4',
+        poster: 'videos/streaming.webp'
+      },
+      {
+        id: 'podcast',
+        title: 'Podcast',
+        short: 'Del formato a la publicación: grabación multicámara, edición, cortes para redes y distribución.',
+        includes: 'Incluye formato, grabación multicámara, edición, cortes y distribución.',
+        long: [
+          'El podcast completo, de principio a fin: formato del programa, montaje de audio y video, grabación, edición y publicación.',
+          'Un buen podcast posiciona a quien habla y genera material para redes durante meses.',
+          'Entregables: diseño del formato, grabación multicámara, edición de episodios, cortes para Reels y TikTok, y publicación en Spotify, Apple Podcasts y YouTube.'
+        ],
+        video: 'videos/podcast.mp4',
+        poster: 'videos/podcast.webp'
+      }
+    ];
+
+    // Filas de Proyectos: una por servicio. La de Estrategia de contenido muestra las marcas (CLIENTS);
+    // las demás muestran piezas sueltas (PIECES). service debe coincidir con un título de SERVICES.
+    const ROWS = [
+      { service: 'Estrategia de contenido', note: 'Marcas con contenido continuo, mes a mes.', clients: true },
+      { service: 'Streaming', note: 'Transmisiones en vivo multicámara.' },
+      { service: 'Podcast', note: 'Producción de principio a fin.' },
+      { service: 'Video corporativo', note: 'Institucionales, eventos y espacios.' }
+    ];
+
+    // El orden importa: la primera pieza de cada servicio ocupa el bloque grande de la grilla bento.
+    const PIECES = [
+      {
+        service: 'Streaming', client: 'EGEPUD', title: 'I Congreso Nacional Multidisciplinario de Derecho',
+        text: 'Cobertura del congreso en Chiclayo. En esta pieza, la ponencia de Frank Almanza sobre el dolo.',
+        cover: 'img/cover-congreso.webp', preview: 'videos/preview/congreso.mp4',
+        item: { link: 'https://www.youtube.com/watch?v=PmBJ-UlxCGM', poster: 'img/proy-congreso-egepud.webp', label: 'I Congreso Nacional Multidisciplinario de Derecho' }
+      },
+      {
+        service: 'Streaming', client: 'Detrás de cámaras', title: 'Streaming de un concurso de marinera',
+        text: 'Montaje técnico y realización en vivo, contado desde la cabina.',
+        cover: 'videos/streaming.webp', preview: 'videos/preview/streaming.mp4',
+        item: { src: 'videos/streaming.mp4', poster: 'videos/streaming.webp' }
+      },
+      {
+        service: 'Podcast', client: 'EGEPUD', title: 'EGEPUD Podcast #27',
+        text: 'Entrevista al fiscal Germán Juárez Atoche sobre los casos Vizcarra, Nadine Heredia y Humala.',
+        cover: 'img/cover-egepud-podcast27.webp', preview: 'videos/preview/egepud-podcast27.mp4',
+        item: { link: 'https://www.youtube.com/watch?v=9FrImhIQUkY&t=69s', poster: 'img/proy-egepud-podcast-27.webp', label: 'EGEPUD Podcast #27 · Fiscal Juárez Atoche' }
+      },
+      {
+        service: 'Podcast', client: 'Detrás de cámaras', title: 'Estudio de podcast móvil',
+        text: 'Set de tres cámaras armado en las oficinas del cliente.',
+        cover: 'videos/podcast.webp', preview: 'videos/preview/podcast.mp4',
+        item: { src: 'videos/podcast.mp4', poster: 'videos/podcast.webp' }
+      },
+      {
+        service: 'Podcast', client: 'Elena Rochabrun', title: 'Conversaciones que Transforman',
+        text: 'Primer episodio: liderazgo con propósito, con Kathy Román como invitada.',
+        cover: 'img/cover-elena.webp', preview: 'videos/preview/elena.mp4',
+        item: { link: 'https://www.youtube.com/watch?v=x9HW7XKCQRk&t=38s', poster: 'img/proy-conversaciones-que-transforman.webp', label: 'Conversaciones que Transforman · EP. 1' }
+      },
+      {
+        service: 'Podcast', client: 'EGEPUD', title: 'Avance del podcast #27',
+        text: 'Corte vertical del episodio para Reels y Facebook.',
+        cover: 'img/egepud-reel-podcast27.webp', preview: 'videos/preview/egepud-avance.mp4',
+        item: { link: 'https://www.facebook.com/share/r/18AjjfrKku/', poster: 'img/egepud-reel-podcast27.webp', label: 'Avance del podcast #27 para redes' }
+      },
+      {
+        service: 'Video corporativo', client: 'EGEPUD', title: '9 años formando a la comunidad jurídica',
+        text: 'Video institucional por el aniversario: congresos, podcast y formación.',
+        cover: 'videos/corporativo.webp', preview: 'videos/preview/corporativo.mp4', landscape: true,
+        item: { src: 'videos/corporativo.mp4', poster: 'videos/corporativo.webp' }
+      },
+      {
+        service: 'Video corporativo', client: 'OMNIMEDIA', title: 'Experiencia OMNIMEDIA',
+        text: 'Recorrido por su sala de videoconferencia y la experiencia de sus clientes.',
+        cover: 'img/cover-omnimedia.webp', preview: 'videos/preview/omnimedia.mp4', focus: '8%',
+        item: { src: 'videos/omnimedia-experiencia.mp4', poster: 'videos/omnimedia-experiencia.webp' }
+      },
+      {
+        service: 'Video corporativo', client: 'Salas Zegarra & Abogados', title: 'Inauguración de oficinas',
+        text: 'Cobertura del evento de inauguración, editada para Reels.',
+        cover: 'img/egepud-reel-salas-zegarra.webp', preview: 'videos/preview/salas-zegarra.mp4',
+        item: { link: 'https://www.instagram.com/reel/DQprCAoD11n/', poster: 'img/egepud-reel-salas-zegarra.webp', label: 'Inauguración de Salas Zegarra & Abogados' }
+      }
+    ];
+
+    // Clientes: cada uno con sus servicios (deben coincidir con títulos de SERVICES) y sus piezas.
+    // Pieza: { src, poster } video propio · { img } foto · { link, poster, label } video publicado afuera.
+    // fit: 'contain' para videos horizontales dentro de la ventana vertical. since: año en que empezó el trabajo.
+    const CLIENTS = [
+      {
+        id: 'omnimedia',
+        name: 'OMNIMEDIA',
+        sector: 'Tecnología',
+        cover: 'img/cover-omnimedia.webp',
+        focus: '8%',
+        preview: 'videos/preview/omnimedia.mp4',
+        services: ['Estrategia de contenido'],
+        text: [
+          'Soluciones de tecnología y videoconferencia para empresas.',
+          'Estrategia de contenido, guiones y producción de videos de producto y de sus espacios para TikTok y redes.'
+        ],
+        profile: { url: 'https://www.tiktok.com/@omnimediaperu', label: 'TikTok' },
+        items: [
+          { src: 'videos/omnimedia-experiencia.mp4', poster: 'videos/omnimedia-experiencia.webp' },
+          { src: 'videos/redes-3.mp4', poster: 'videos/redes-3.webp' },
+          { src: 'videos/redes-2.mp4', poster: 'videos/redes-2.webp' }
+        ]
+      },
+      {
+        id: 'egepud',
+        name: 'EGEPUD',
+        sector: 'Educación legal',
+        cover: 'img/cover-egepud.webp',
+        preview: 'videos/preview/egepud.mp4',
+        services: ['Estrategia de contenido', 'Podcast', 'Streaming', 'Video corporativo'],
+        text: [
+          'Escuela de formación jurídica.',
+          'Estrategia de contenido para sus redes, producción de EGEPUD Podcast, video institucional y registro de sus congresos.'
+        ],
+        profile: { url: 'https://www.facebook.com/egepud', label: 'Facebook' },
+        items: [
+          { src: 'videos/corporativo.mp4', poster: 'videos/corporativo.webp', fit: 'contain' },
+          { link: 'https://www.instagram.com/reel/DQprCAoD11n/', poster: 'img/egepud-reel-salas-zegarra.webp', label: 'Inauguración de Salas Zegarra & Abogados' },
+          { link: 'https://www.youtube.com/watch?v=9FrImhIQUkY&t=69s', poster: 'img/proy-egepud-podcast-27.webp', label: 'EGEPUD Podcast #27 · Fiscal Juárez Atoche' },
+          { link: 'https://www.instagram.com/reel/DbwW1VGlVk1/', poster: 'img/egepud-reel-curso.webp', label: 'Reel del curso para ser juez o fiscal' },
+          { link: 'https://www.youtube.com/watch?v=PmBJ-UlxCGM', poster: 'img/proy-congreso-egepud.webp', label: 'I Congreso Nacional Multidisciplinario de Derecho' },
+          { link: 'https://www.facebook.com/share/r/18AjjfrKku/', poster: 'img/egepud-reel-podcast27.webp', label: 'Avance del podcast #27 para redes' }
+        ]
+      },
+      {
+        id: 'silvia',
+        name: 'Silvia Huisa Alvarado',
+        sector: 'Legal',
+        cover: 'img/cover-silvia.webp',
+        focus: '0%',
+        preview: 'videos/preview/silvia.mp4',
+        services: ['Estrategia de contenido'],
+        text: [
+          'Abogada de familia.',
+          'Estrategia de contenido, guiones y producción de videos que explican temas legales en lenguaje simple.'
+        ],
+        profile: { url: 'https://www.tiktok.com/@silviahuisaalvarado', label: 'TikTok' },
+        items: [
+          { src: 'videos/redes-4.mp4', poster: 'videos/redes-4.webp' },
+          { src: 'videos/redes-1.mp4', poster: 'videos/redes-1.webp' }
+        ]
+      },
+      {
+        id: 'riverita',
+        name: 'La Riverita',
+        sector: 'Restaurante',
+        cover: 'img/cover-riverita.webp',
+        preview: 'videos/preview/riverita.mp4',
+        services: ['Estrategia de contenido'],
+        text: [
+          'Cevichería en el Malecón de Chucuito, Callao.',
+          'Estrategia de contenido, reels y fotografía de carta para atraer visitas.'
+        ],
+        profile: { url: 'https://www.tiktok.com/@lariverita.pe', label: 'TikTok' },
+        items: [
+          { src: 'videos/riverita-leche-de-tigre.mp4', poster: 'videos/riverita-leche-de-tigre.webp' },
+          { src: 'videos/proy-riverita.mp4', poster: 'img/marca-riverita.webp' },
+          { img: 'img/proy-riverita-foto.webp' }
+        ]
+      },
+      {
+        id: 'elena',
+        name: 'Elena Rochabrun',
+        sector: 'Marca personal',
+        cover: 'img/cover-elena.webp',
+        preview: 'videos/preview/elena.mp4',
+        services: ['Podcast'],
+        text: [
+          'Conversaciones que Transforman: podcast de historias reales de liderazgo.',
+          'Producción del podcast. En el primer episodio, Kathy Román habla de liderazgo con propósito.'
+        ],
+        items: [
+          { link: 'https://www.youtube.com/watch?v=x9HW7XKCQRk&t=38s', poster: 'img/proy-conversaciones-que-transforman.webp', label: 'Conversaciones que Transforman · EP. 1' }
+        ]
+      }
+    ];
+
+    const ARROW_OUT = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg>';
+    const ARROW = '<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h12M10 4l5 5-5 5"/></svg>';
+
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+    // Íconos de servicios: Tabler Icons (MIT) https://tabler.io/icons
+    const SERVICE_ICONS = {
+      corporativo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4"/><path pathLength="1" d="M3 8a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2l0 -8"/></svg>',
+      redes: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14"/><path pathLength="1" d="M11 4h2"/><path pathLength="1" d="M12 17v.01"/></svg>',
+      streaming: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M18.364 19.364a9 9 0 1 0 -12.728 0"/><path pathLength="1" d="M15.536 16.536a5 5 0 1 0 -7.072 0"/><path pathLength="1" d="M11 13a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/></svg>',
+      podcast: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M9 5a3 3 0 0 1 3 -3a3 3 0 0 1 3 3v5a3 3 0 0 1 -3 3a3 3 0 0 1 -3 -3l0 -5"/><path pathLength="1" d="M5 10a7 7 0 0 0 14 0"/><path pathLength="1" d="M8 21l8 0"/><path pathLength="1" d="M12 17l0 4"/></svg>'
+    };
+
+    /* ─── SERVICIOS ─── */
+    function renderServices() {
+      const list = document.getElementById('service-list');
+      list.innerHTML = SERVICES.map((s, i) => `
+        <li class="service-row reveal d${(i % 3) + 1}" data-id="${s.id}" role="button" tabindex="0" aria-haspopup="dialog">
+          <h3 class="service-name"><span class="service-icon">${SERVICE_ICONS[s.id] || ''}</span><span>${esc(s.title)}</span></h3>
+          <p class="service-desc">${esc(s.short)}</p>
+          <span class="service-go">${ARROW}</span>
+        </li>
+      `).join('');
+
+      list.querySelectorAll('.service-row').forEach(row => {
+        const open = () => openModal(row.dataset.id, row);
+        const s = SERVICES.find(x => x.id === row.dataset.id);
+        const first = s.videos ? s.videos[0].src : s.video;
+        ['pointerenter', 'focus', 'touchstart'].forEach(ev => row.addEventListener(ev, () => warmUp(first), { passive: true, once: true }));
+        row.addEventListener('click', open);
+        row.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+        });
+      });
+    }
+
+    /* ─── VENTANA DE SERVICIO ─── */
+    /* ─── CARRUSEL DE VIDEOS (varios videos en una ventana de servicio) ─── */
+    const SOUND_OFF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path d="M22 9l-6 6M16 9l6 6"/></svg>';
+    const SOUND_ON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+    let soundOn = false; // se recuerda entre videos mientras la página esté abierta
+
+    // Precarga por intención: al acercar el mouse (o el dedo) se empieza a descargar el primer video,
+    // y al abrir la ventana se reutiliza ese mismo elemento ya cargado.
+    const warm = new Map();
+    function warmUp(src) {
+      if (!src || warm.has(src)) return;
+      const v = document.createElement('video');
+      v.muted = true; v.playsInline = true; v.preload = 'auto'; v.src = src;
+      warm.set(src, v);
+    }
+
+    const where = url => /instagram\./.test(url) ? 'Instagram' : /tiktok\./.test(url) ? 'TikTok' : /facebook\./.test(url) ? 'Facebook' : 'YouTube';
+
+    function buildSlide(c) {
+      if (c.img) return `<img src="${c.img}" alt="${esc(c.label || 'Fotografía')}" loading="lazy" decoding="async">`;
+      if (c.link) return `<img src="${c.poster}" alt="${esc(c.label || 'Video')}" loading="lazy" decoding="async">
+        <a class="car-link" href="${c.link}" target="_blank" rel="noopener"><span>${esc(c.label || '')}</span><b>Ver en ${where(c.link)} ${ARROW_OUT}</b></a>`;
+      return `<div class="vp"><video data-src="${c.src}"${c.poster ? ` poster="${c.poster}"` : ''} muted playsinline preload="none"${c.fit ? ` style="object-fit:${c.fit}"` : ''}></video>
+        <button class="vp-sound" type="button" aria-label="Activar sonido">${SOUND_OFF}</button><span class="vp-bar" aria-hidden="true"><i></i></span></div>`;
+    }
+
+    function buildCarousel(clips, title) {
+      const chevron = d => `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+      return `<div class="carousel${clips.length === 1 ? ' single' : ''}" role="group" aria-roledescription="carrusel" aria-label="Trabajos de ${esc(title)}">
+        <div class="car-track">${clips.map((c, i) => `<div class="car-slide" role="group" aria-label="Pieza ${i + 1} de ${clips.length}">${buildSlide(c)}</div>`).join('')}</div>
+        <button class="car-btn prev" type="button" aria-label="Anterior">${chevron('M12.5 4.5L7 10l5.5 5.5')}</button>
+        <button class="car-btn next" type="button" aria-label="Siguiente">${chevron('M7.5 4.5L13 10l-5.5 5.5')}</button>
+        <div class="car-dots">${clips.map((_, i) => `<button type="button" aria-label="Ir a la pieza ${i + 1}"></button>`).join('')}</div>
+      </div>`;
+    }
+
+    function initCarousel(box) {
+      const slides = [...box.querySelectorAll('.car-slide')];
+      const videos = slides.map(sl => sl.querySelector('video'));
+      const dots = [...box.querySelectorAll('.car-dots button')];
+      const prev = box.querySelector('.car-btn.prev');
+      const next = box.querySelector('.car-btn.next');
+      const last = slides.length - 1;
+      let index = 0, timer = 0;
+
+      // Si el video ya se precargó al pasar el mouse, se usa ese elemento
+      videos.forEach((v, n) => {
+        const w = v && warm.get(v.dataset.src);
+        if (!w) return;
+        w.poster = v.poster; w.style.cssText = v.style.cssText; w.dataset.src = v.dataset.src;
+        v.replaceWith(w); videos[n] = w; warm.delete(v.dataset.src);
+      });
+
+      const load = (v, full) => {
+        if (!v) return;
+        if (!v.getAttribute('src')) { v.preload = full ? 'auto' : 'metadata'; v.src = v.dataset.src; }
+        else if (full) v.preload = 'auto';
+      };
+      const setSoundIcons = () => box.querySelectorAll('.vp-sound').forEach(b => {
+        b.innerHTML = soundOn ? SOUND_ON : SOUND_OFF;
+        b.setAttribute('aria-label', soundOn ? 'Silenciar' : 'Activar sonido');
+      });
+
+      const paint = i => {
+        index = i;
+        clearTimeout(timer);
+        slides.forEach((sl, n) => sl.style.setProperty('--pos', n - i));
+        dots.forEach((d, n) => d.classList.toggle('on', n === i));
+        prev.disabled = i === 0;
+        next.disabled = last === 0;
+        videos.forEach((v, n) => { if (v && n !== i) v.pause(); });
+        const v = videos[i];
+        if (v) {
+          load(v, true);
+          v.muted = !soundOn;
+          v.currentTime = 0;
+          v.play().catch(() => {});
+        } else if (last > 0) {
+          timer = setTimeout(() => go(i + 1), 7000); // fotos y enlaces también avanzan solos
+        }
+        load(videos[i + 1] || videos[0], true);
+      };
+      // Al final vuelve al primero: el carrusel nunca se queda quieto
+      const go = i => { i = i > last ? 0 : Math.max(0, i); if (i !== index) paint(i); else if (last === 0 && videos[0]) videos[0].play().catch(() => {}); };
+
+      videos.forEach((v, n) => {
+        if (!v) return;
+        const bar = v.parentElement.querySelector('.vp-bar i');
+        v.addEventListener('ended', () => { if (n === index) { if (last === 0) { v.currentTime = 0; v.play().catch(() => {}); } else go(index + 1); } });
+        v.addEventListener('timeupdate', () => { if (v.duration) bar.style.transform = `scaleX(${v.currentTime / v.duration})`; });
+        v.addEventListener('playing', () => v.parentElement.classList.remove('paused'));
+        v.addEventListener('pause', () => v.parentElement.classList.add('paused'));
+        v.addEventListener('click', () => { if (v.paused) v.play().catch(() => {}); else v.pause(); });
+      });
+      box.querySelectorAll('.vp-sound').forEach(btn => btn.addEventListener('click', e => {
+        e.stopPropagation();
+        soundOn = !soundOn;
+        videos.forEach(v => { if (v) v.muted = !soundOn; });
+        setSoundIcons();
+      }));
+      setSoundIcons();
+
+      prev.addEventListener('click', () => go(index - 1));
+      next.addEventListener('click', () => go(index + 1));
+      dots.forEach((d, n) => d.addEventListener('click', () => go(n)));
+      box.step = d => go(index + d);
+      box.stop = () => clearTimeout(timer);
+
+      // Deslizar con el dedo
+      let x0 = null;
+      box.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+      box.addEventListener('touchend', e => {
+        if (x0 === null) return;
+        const dx = e.changedTouches[0].clientX - x0;
+        x0 = null;
+        if (Math.abs(dx) > 45) go(index + (dx < 0 ? 1 : -1));
+      }, { passive: true });
+
+      paint(0);
+    }
+
+    let lastTrigger = null;
+
+    function openModal(id, trigger) {
+      const s = SERVICES.find(x => x.id === id);
+      if (!s) return;
+      lastTrigger = trigger || null;
+
+      const modal = document.getElementById('modal');
+      const overlay = document.getElementById('overlay');
+      const videoBox = document.getElementById('modal-video');
+      modal.classList.toggle('landscape', !!s.landscape);
+
+      document.getElementById('modal-title').textContent = s.title;
+      document.getElementById('modal-includes').textContent = s.includes;
+      document.getElementById('modal-desc').innerHTML = s.long.map(p => `<p>${esc(p)}</p>`).join('');
+      document.getElementById('modal-cta').dataset.tipo = s.title;
+      document.getElementById('modal-cta').textContent = 'Cotizar este servicio';
+
+      const clips = s.videos && s.videos.length ? s.videos : (s.video ? [{ src: s.video, poster: s.poster }] : []);
+      if (clips.length) {
+        videoBox.innerHTML = buildCarousel(clips, s.title);
+        initCarousel(videoBox);
+      } else {
+        videoBox.innerHTML = '<div class="pending">Video pendiente</div>';
+      }
+
+      setExpanded(false);
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      overlay.classList.add('open');
+      document.getElementById('modal-body').scrollTop = 0;
+      requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add('open')));
+      document.getElementById('modal-close').focus({ preventScroll: true });
+    }
+
+    // Ventana de pieza suelta (filas de Streaming, Podcast y Video corporativo)
+    function openPiece(pc, trigger) {
+      if (!pc) return;
+      lastTrigger = trigger || null;
+      const modal = document.getElementById('modal');
+      const videoBox = document.getElementById('modal-video');
+      modal.classList.toggle('landscape', !!pc.landscape);
+      document.getElementById('modal-title').textContent = pc.title;
+      document.getElementById('modal-includes').textContent = `${pc.client} · ${pc.service}`;
+      document.getElementById('modal-desc').innerHTML = `<p>${esc(pc.text)}</p>`;
+      const cta = document.getElementById('modal-cta');
+      cta.dataset.tipo = pc.service;
+      cta.textContent = 'Cotizar este servicio';
+      videoBox.innerHTML = buildCarousel([pc.item], pc.title);
+      initCarousel(videoBox);
+      setExpanded(false);
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      document.getElementById('overlay').classList.add('open');
+      document.getElementById('modal-body').scrollTop = 0;
+      requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add('open')));
+      document.getElementById('modal-close').focus({ preventScroll: true });
+    }
+
+    // Ventana de cliente: la misma de servicios, con sus piezas en carrusel
+    function openClient(id, trigger) {
+      const c = CLIENTS.find(x => x.id === id);
+      if (!c) return;
+      lastTrigger = trigger || null;
+      const modal = document.getElementById('modal');
+      const videoBox = document.getElementById('modal-video');
+      modal.classList.remove('landscape');
+
+      document.getElementById('modal-title').textContent = c.name;
+      document.getElementById('modal-includes').textContent = [c.sector, c.since && `desde ${c.since}`].filter(Boolean).join(' · ');
+      document.getElementById('modal-desc').innerHTML =
+        c.text.map(p => `<p>${esc(p)}</p>`).join('') +
+        `<p class="client-tags">${c.services.map(esc).join(' · ')}</p>` +
+        (c.profile ? `<p><a class="project-cta" href="${c.profile.url}" target="_blank" rel="noopener">Ver en ${esc(c.profile.label)} ${ARROW_OUT}</a></p>` : '');
+      const cta = document.getElementById('modal-cta');
+      cta.dataset.tipo = c.services[0];
+      cta.textContent = 'Cotizar algo similar';
+
+      videoBox.innerHTML = buildCarousel(c.items, c.name);
+      initCarousel(videoBox);
+
+      setExpanded(false);
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      document.getElementById('overlay').classList.add('open');
+      document.getElementById('modal-body').scrollTop = 0;
+      requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add('open')));
+      document.getElementById('modal-close').focus({ preventScroll: true });
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      if (!modal.classList.contains('open')) return;
+      modal.classList.remove('open');
+      document.getElementById('overlay').classList.remove('open');
+      document.body.style.overflow = '';
+      modal.querySelectorAll('video').forEach(v => v.pause());
+      const car = modal.querySelector('.carousel');
+      if (car && car.stop) car.stop();
+      setTimeout(() => {
+        if (!modal.classList.contains('open')) {
+          modal.hidden = true;
+          document.getElementById('modal-video').innerHTML = '';
+        }
+      }, 350);
+      if (lastTrigger) lastTrigger.focus({ preventScroll: true });
+    }
+
+    function setExpanded(on) {
+      const info = document.getElementById('modal-info');
+      info.classList.toggle('expanded', on);
+      const more = document.getElementById('modal-more');
+      more.setAttribute('aria-expanded', on);
+      more.textContent = on ? 'Ver menos' : 'Ver más';
+      if (!on) info.scrollTop = 0;
+    }
+
+    function initModal() {
+      document.getElementById('modal-info').addEventListener('click', e => {
+        if (e.target.closest('a')) return;
+        const info = e.currentTarget;
+        if (e.target.closest('.modal-more')) setExpanded(!info.classList.contains('expanded'));
+        else if (!info.classList.contains('expanded')) setExpanded(true);
+      });
+      document.getElementById('modal-close').addEventListener('click', closeModal);
+      document.getElementById('overlay').addEventListener('click', closeModal);
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeModal();
+        const car = document.querySelector('#modal.open .carousel');
+        if (car && car.step && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
+          e.preventDefault();
+          car.step(e.key === 'ArrowRight' ? 1 : -1);
+        }
+      });
+
+      // "Cotizar este servicio" cierra la ventana y deja el tipo elegido en el formulario
+      document.getElementById('modal-cta').addEventListener('click', e => {
+        const tipo = e.currentTarget.dataset.tipo;
+        const select = document.getElementById('tipo');
+        if ([...select.options].some(o => o.value === tipo)) select.value = tipo;
+        lastTrigger = null;
+        closeModal();
+      });
+    }
+
+    /* ─── PROYECTOS ─── */
+    function renderProjects() {
+      const wrap = document.getElementById('project-rows');
+
+      const tile = (t, k, n) => `
+        <article class="tile" ${t.attrs}${t.focus ? ` style="--focus:${t.focus}"` : ''} role="button" tabindex="0" aria-haspopup="dialog">
+          <img src="${t.cover}" alt="${esc(t.title)}" loading="lazy" decoding="async">
+          ${t.preview ? `<video class="pv" data-src="${t.preview}" muted loop playsinline preload="none" aria-hidden="true"></video>` : ''}
+          <span class="tile-badge">${esc(t.badge)}</span>
+          <div class="tile-info">
+            <p class="tile-meta">${esc(t.meta)}</p>
+            <h4 class="tile-title">${esc(t.title)}</h4>
+          </div>
+          <span class="tile-go" aria-hidden="true">${ARROW}</span>
+        </article>`;
+
+      wrap.innerHTML = ROWS.map(r => {
+        const tiles = r.clients
+          ? CLIENTS.filter(c => c.services.includes(r.service)).map(c => ({
+              attrs: `data-client="${c.id}"`, cover: c.cover, preview: c.preview, focus: c.focus,
+              title: c.name, meta: c.sector, badge: `${c.items.length} ${c.items.length === 1 ? 'pieza' : 'piezas'}`
+            }))
+          : PIECES.map((pc, n) => pc.service !== r.service ? null : ({
+              attrs: `data-piece="${n}"`, cover: pc.cover, preview: pc.preview || pc.item.src, focus: pc.focus,
+              title: pc.title, meta: pc.client, badge: pc.item.link ? where(pc.item.link) : 'Video'
+            })).filter(Boolean);
+        return `
+          <div class="pbento" role="group" aria-label="${esc(r.service)}">
+            <div class="bento n${Math.min(tiles.length, 4)}">${tiles.map((t, k) => tile(t, k, tiles.length)).join('')}</div>
+            <div class="pbento-head">
+              <h3 class="prow-title">${esc(r.service)}</h3>
+              <p class="prow-note">${esc(r.note)}</p>
+            </div>
+          </div>`;
+      }).join('');
+
+      // Vista previa: con mouse se reproduce al pasar por encima; en celular, cuando el bloque está en pantalla
+      const startPv = card => {
+        const v = card.querySelector('.pv');
+        if (!v) return;
+        if (!v.getAttribute('src')) { v.src = v.dataset.src; v.addEventListener('playing', () => v.classList.add('ready'), { once: true }); }
+        card.classList.add('previewing');
+        v.play().catch(() => {});
+      };
+      const stopPv = card => {
+        const v = card.querySelector('.pv');
+        card.classList.remove('previewing');
+        if (v) v.pause();
+      };
+      const cards = wrap.querySelectorAll('.tile');
+      if (window.matchMedia('(hover: hover)').matches) {
+        cards.forEach(card => {
+          card.addEventListener('pointerenter', () => startPv(card));
+          card.addEventListener('pointerleave', () => stopPv(card));
+        });
+      } else if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(entries => entries.forEach(e => e.isIntersecting ? startPv(e.target) : stopPv(e.target)), { threshold: 0.75 });
+        cards.forEach(card => io.observe(card));
+      }
+
+      cards.forEach(card => {
+        const c = card.dataset.client && CLIENTS.find(x => x.id === card.dataset.client);
+        const pc = card.dataset.piece && PIECES[card.dataset.piece];
+        const open = () => c ? openClient(c.id, card) : openPiece(pc, card);
+        const first = c ? (c.items.find(it => it.src) || {}).src : pc.item.src;
+        ['pointerenter', 'focus', 'touchstart'].forEach(ev => card.addEventListener(ev, () => warmUp(first), { passive: true, once: true }));
+        card.addEventListener('click', open);
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+        });
+      });
+    }
+
+
+    /* ─── NAV ─── */
+    function initNav() {
+      const nav = document.getElementById('nav');
+      const wa = document.getElementById('wa-float');
+      const toTop = document.getElementById('to-top');
+      const hero = document.getElementById('top');
+
+      // Fondo del menú y botones flotantes aparecen al salir del inicio
+      new IntersectionObserver(([entry]) => {
+        nav.classList.toggle('scrolled', !entry.isIntersecting);
+        wa.classList.toggle('show', !entry.isIntersecting);
+        toTop.classList.toggle('show', !entry.isIntersecting);
+      }, { rootMargin: `-${72}px 0px 0px 0px`, threshold: 0.12 }).observe(hero);
+
+      // Enlace activo según la sección visible
+      const links = [...document.querySelectorAll('.nav-links a')];
+      const sectionIO = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      links.forEach(a => {
+        const section = document.querySelector(a.getAttribute('href'));
+        if (section) sectionIO.observe(section);
+      });
+
+      // Menú móvil
+      const burger = document.getElementById('hamburger');
+      const mobile = document.getElementById('nav-mobile');
+      const setOpen = open => {
+        mobile.classList.toggle('open', open);
+        burger.classList.toggle('open', open);
+        burger.setAttribute('aria-expanded', open);
+        burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+        nav.classList.toggle('scrolled', open || window.scrollY > 40);
+      };
+      burger.addEventListener('click', () => setOpen(!mobile.classList.contains('open')));
+      mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    }
+
+    /* ─── APARICIÓN AL HACER SCROLL ─── */
+    function initReveal() {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const el = entry.target;
+          if (entry.isIntersecting) {
+            el.classList.add('visible', 'seen');
+            if (el.closest('.hero')) io.unobserve(el); // el inicio aparece una sola vez
+          } else {
+            el.classList.remove('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    }
+
+    /* ─── VIDEOS DEL INICIO ─── */
+    // Computadora: los tres clips lado a lado. Celular: uno a la vez, y al terminar pasa al siguiente.
+    function initHeroVideos() {
+      const clips = [...document.querySelectorAll('.hero-clip')].filter(c => c.querySelector('video').dataset.src);
+      const load = v => {
+        if (v.getAttribute('src')) return;
+        v.src = v.dataset.src;
+        v.addEventListener('canplay', () => v.classList.add('ready'), { once: true });
+      };
+      if (!window.matchMedia('(max-width: 960px)').matches) {
+        clips.forEach(c => { const v = c.querySelector('video'); load(v); v.play().catch(() => {}); });
+        return;
+      }
+      const order = [clips[1], clips[0], clips[2]].filter(Boolean); // empieza por el clip de Alex
+      let k = 0;
+      const show = i => {
+        order.forEach((c, n) => c.classList.toggle('on', n === i));
+        const v = order[i].querySelector('video');
+        load(v);
+        v.currentTime = 0;
+        v.play().catch(() => {});
+        const nxt = order[(i + 1) % order.length].querySelector('video');
+        nxt.preload = 'auto';
+        load(nxt);
+      };
+      order.forEach(c => {
+        const v = c.querySelector('video');
+        v.loop = order.length === 1;
+        v.addEventListener('ended', () => { k = (k + 1) % order.length; show(k); });
+      });
+      show(0);
+    }
+
+    /* ─── FORMULARIO ─── */
+    // URL de la aplicación web de Apps Script (termina en /exec)
+    const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwiYcau8dYgruTINKkAhLUj4s4nplgre6V82iz3xEgtsGJUevd_fdtiauID6n9Rl1Zg2A/exec';
+
+    function initContactForm() {
+      const form = document.getElementById('contact-form');
+      const done = document.getElementById('form-done');
+      const error = document.getElementById('form-error');
+      const btn = form.querySelector('button[type="submit"]');
+
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        error.hidden = true;
+
+        if (!form.checkValidity()) {
+          const first = form.querySelector(':invalid');
+          error.textContent = first && first.type === 'email'
+            ? 'Revisa el email, parece incompleto.'
+            : 'Completa todos los campos para enviar el mensaje.';
+          error.hidden = false;
+          if (first) first.focus();
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = 'Enviando...';
+        try {
+          await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: new URLSearchParams(new FormData(form))
+          });
+          form.hidden = true;
+          done.hidden = false;
+        } catch (err) {
+          btn.disabled = false;
+          btn.textContent = 'Enviar mensaje';
+          error.textContent = 'No se pudo enviar. Escribe por WhatsApp o email, por favor.';
+          error.hidden = false;
+        }
+      });
+    }
+
+    /* ─── PANTALLA DE ENTRADA ─── */
+    function runIntro(onDone) {
+      const intro = document.getElementById('intro');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let finished = false;
+      document.body.style.overflow = 'hidden';
+
+      const finish = () => {
+        if (finished) return;
+        finished = true;
+        intro.classList.add('leaving');
+        setTimeout(onDone, reduce ? 0 : 300);
+        setTimeout(() => {
+          intro.remove();
+          document.body.style.overflow = '';
+        }, reduce ? 50 : 1000);
+      };
+
+      const hold = setTimeout(finish, reduce ? 400 : 1100);
+      const skip = () => { clearTimeout(hold); finish(); };
+      intro.addEventListener('click', skip);
+      window.addEventListener('keydown', skip, { once: true });
+      window.addEventListener('wheel', skip, { once: true, passive: true });
+      window.addEventListener('touchstart', skip, { once: true, passive: true });
+    }
+
+    /* ─── INICIO ─── */
+    document.addEventListener('DOMContentLoaded', () => {
+      renderServices();
+      renderProjects();
+      initModal();
+      initNav();
+      initContactForm();
+      initHeroVideos();
+      runIntro(initReveal);
+    });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alex Urresty",
+    "jobTitle": "Director Audiovisual Freelance",
+    "description": "Director audiovisual freelance en Lima, Perú. Especializado en video corporativo B2B, streaming en vivo, podcast y estrategia de contenido para redes sociales.",
+    "url": "https://alexurresty.com",
+    "telephone": "+51943214652",
+    "sameAs": [
+      "https://www.instagram.com/alex.urresty/",
+      "https://www.tiktok.com/@prod.alexurresty"
+    ],
+    "address": { "@type": "PostalAddress", "addressLocality": "Lima", "addressCountry": "PE" },
+    "knowsAbout": ["Producción audiovisual", "Video corporativo B2B", "Streaming en vivo", "Podcast corporativo", "Estrategia de contenido", "Redes sociales empresariales"],
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Video corporativo", "description": "Grabación y edición de videos corporativos, institucionales y demos de producto para empresas en Lima." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estrategia de contenido para redes sociales", "description": "Estrategia y producción de Reels, TikTok y YouTube Shorts para marcas en Lima." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Streaming en vivo", "description": "Transmisiones en vivo para eventos, lanzamientos y clases en Lima, Perú." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Producción de podcast", "description": "Grabación multicámara, edición y distribución de podcast corporativo en Lima." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Alex Urresty | Producción Audiovisual",
+    "description": "Producción audiovisual en Lima para empresas: video corporativo, streaming en vivo, podcast y estrategia de contenido para redes sociales.",
+    "url": "https://alexurresty.com",
+    "image": "https://alexurresty.com/img/og-image.jpg",
+    "telephone": "+51943214652",
+    "email": "alexrenato_008@hotmail.es",
+    "priceRange": "$$",
+    "address": { "@type": "PostalAddress", "addressLocality": "Lima", "addressRegion": "Lima", "addressCountry": "PE" },
+    "areaServed": [
+      { "@type": "City", "name": "Lima" },
+      { "@type": "Country", "name": "Perú" }
+    ],
+    "founder": { "@type": "Person", "name": "Alex Urresty" },
+    "sameAs": [
+      "https://www.instagram.com/alex.urresty/",
+      "https://www.tiktok.com/@prod.alexurresty"
+    ],
+    "serviceType": ["Producción audiovisual", "Video corporativo", "Streaming en vivo", "Producción de podcast", "Estrategia de contenido", "Contenido para redes sociales"]
+  }
+  </script>
+</body>
+</html>
