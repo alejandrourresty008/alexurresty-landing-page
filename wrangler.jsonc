@@ -1,0 +1,9 @@
+{
+  "name": "alex-urresty",
+  "compatibility_date": "2026-10-19",
+  "assets": { "directory": "." },
+  "routes": [
+    { "pattern": "alexurresty.com", "custom_domain": true },
+    { "pattern": "www.alexurresty.com", "custom_domain": true }
+  ]
+}
