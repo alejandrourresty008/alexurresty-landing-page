@@ -1,36 +1,47 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { projects, services, orientation, makeChapters } from '../lib/catalog.ts';
-test('retains all 13 projects and the 4 existing services', () => {
-  assert.equal(projects.length, 13); assert.equal(services.length, 4);
-  assert.equal(new Set(projects.map(p => p.id)).size, 13);
+import { existsSync } from 'node:fs';
+import { clients, pieces, rows, services, rowTiles } from '../lib/catalog.ts';
+
+const publicFile = (src: string) => new URL(`../public${src}`, import.meta.url);
+const titles = new Set(services.map(s => s.title));
+
+test('contenido completo: 4 servicios, 4 filas, 7 piezas y 5 marcas', () => {
+  assert.equal(services.length, 4);
+  assert.equal(rows.length, 4);
+  assert.equal(pieces.length, 7);
+  assert.equal(clients.length, 5);
 });
-test('uses measured preview dimensions rather than commercial categories', () => {
-  const portraitPodcast = projects.find(p => p.title === 'Estudio de podcast móvil');
-  const landscapeCorporate = projects.find(p => p.title === '9 años formando a la comunidad jurídica');
-  assert.ok(portraitPodcast && landscapeCorporate);
-  assert.equal(orientation(portraitPodcast), 'portrait');
-  assert.equal(orientation(landscapeCorporate), 'landscape');
+
+test('los identificadores no se repiten', () => {
+  for (const list of [services, pieces, clients]) assert.equal(new Set(list.map(x => x.id)).size, list.length);
 });
-test('chapters start vertical, then horizontal, with every project exactly once', () => {
-  const chapters = makeChapters(projects);
-  assert.equal(chapters.length, 7);
-  assert.deepEqual(chapters.map(c => c.format), ['portrait','portrait','portrait','landscape','landscape','landscape','landscape']);
-  assert.deepEqual(chapters.flatMap(c => c.projects).map(p => p.id).sort(), projects.map(p => p.id).sort());
-  assert.ok(chapters.every(c => c.projects.every(p => orientation(p) === c.format)));
+
+test('filas, piezas y marcas apuntan a servicios que existen', () => {
+  rows.forEach(r => assert.ok(titles.has(r.service), r.service));
+  pieces.forEach(p => assert.ok(titles.has(p.service), p.title));
+  clients.forEach(c => c.services.forEach(s => assert.ok(titles.has(s), `${c.name}: ${s}`)));
 });
-test('empty and filtered catalogs produce only valid chapters', () => {
-  assert.deepEqual(makeChapters([]), []);
-  const selected = projects.filter(p => p.category === 'Streaming');
-  assert.equal(makeChapters(selected).flatMap(c => c.projects).length, 2);
+
+test('ninguna fila queda vacía y cada pieza aparece una sola vez', () => {
+  rows.forEach(r => assert.ok(rowTiles(r).length > 0, r.service));
+  const shown = rows.flatMap(r => rowTiles(r)).filter(t => t.kind === 'piece').map(t => t.piece.id).sort();
+  assert.deepEqual(shown, pieces.map(p => p.id).sort());
 });
-test('local services match the deployed service catalog verified on 2026-10-26', async () => {
-  const { readFile } = await import('node:fs/promises');
-  const snapshot = JSON.parse(await readFile(new URL('../docs/services-live-snapshot.json', import.meta.url), 'utf8'));
-  type PublishedService = { id: string; title: string; short: string; includes: string; long: string[]; video?: string; poster?: string; videos?: { src: string; poster: string }[] };
-  const normalized = snapshot.services.map((service: PublishedService) => ({
-    id: service.id, title: service.title, category: service.title, short: service.short, includes: service.includes, description: service.long,
-    items: (service.videos ?? [{ src: service.video, poster: service.poster }]).map(video => ({ kind: 'video', src: '/' + video.src, poster: '/' + video.poster })),
-  }));
-  assert.deepEqual(services, normalized);
+
+test('todas las imágenes y videos referenciados existen en public/', () => {
+  const files = [
+    ...services.flatMap(s => s.clips),
+    ...pieces.flatMap(p => [p.item, { kind: 'image' as const, src: p.cover }, { kind: 'video' as const, src: p.preview }]),
+    ...clients.flatMap(c => [...c.items, { kind: 'image' as const, src: c.cover }, { kind: 'video' as const, src: c.preview }])
+  ].flatMap(c => c.kind === 'link' ? [c.poster] : [c.src, ...('poster' in c && c.poster ? [c.poster] : [])]);
+  const missing = [...new Set(files)].filter(f => !existsSync(publicFile(f)));
+  assert.deepEqual(missing, []);
+});
+
+test('las métricas usan el formato "NK+" y una plataforma conocida', () => {
+  clients.flatMap(c => c.metrics ?? []).forEach(m => {
+    assert.match(m.value, /^\d+K\+$/);
+    assert.ok(['facebook', 'tiktok', 'instagram'].includes(m.platform));
+  });
 });
