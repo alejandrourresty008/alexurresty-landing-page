@@ -2,34 +2,84 @@
 
 Landing migrada a Next.js App Router, TypeScript estricto, React y Tailwind CSS. Se conserva la identidad y el contenido del sitio anterior.
 
-## Ejecutar
+## Ejecutar la landing en local
 
-Requiere Node.js 22.13 o superior y npm.
+### Requisitos
+
+- Git para clonar el repositorio.
+- Node.js **22.13 o superior**, con npm incluido. Comprueba la instalación con `node --version` y `npm --version`.
+- Python 3, disponible como `python3`, para usar `npm run preview`. No se necesita para el modo de desarrollo.
+- Conexión a internet para instalar las dependencias. El formulario de contacto y los enlaces externos también requieren conexión.
+
+La landing no necesita una base de datos local ni un archivo `.env` para iniciarse. El formulario utiliza el endpoint de Google Apps Script que ya está configurado en `lib/site.ts`; un envío manual desde local utiliza ese servicio real.
+
+### 1. Obtener la rama mejoras-leo
+
+En una terminal, desde la carpeta donde quieras guardar el proyecto:
+
+```sh
+git clone --branch mejoras-leo --single-branch https://github.com/alejandrourresty008/alexurresty-landing-page.git
+cd alexurresty-landing-page
+```
+
+Si ya tienes el repositorio clonado, entra en su carpeta y utiliza `git switch mejoras-leo`. Comprueba que tus cambios locales estén guardados antes de cambiar de rama o actualizarla.
+
+### 2. Instalar las dependencias
+
+Ejecuta los siguientes comandos desde la raíz del proyecto, donde está `package.json`:
 
 ```sh
 npm ci
+```
+
+`npm ci` instala las versiones fijadas en `package-lock.json`. No hace falta instalar Next.js, GSAP ni Three.js por separado.
+
+### 3. Iniciar el modo de desarrollo
+
+```sh
 npm run dev
 ```
 
-La vista de desarrollo abre en http://127.0.0.1:3000.
+Abre [http://127.0.0.1:3000](http://127.0.0.1:3000) en el navegador. Mantén la terminal abierta: los cambios en los fuentes se actualizan durante el desarrollo. Para detener el servidor, pulsa **Ctrl+C**.
+
+### 4. Previsualizar la versión de producción
+
+Para revisar el resultado optimizado, genera primero la exportación estática y después sírvela:
 
 ```sh
-npm run typecheck
-npm run lint
-npm run test:unit
 npm run build
 npm run preview
 ```
 
-`npm run build` genera la web completa en `out/`. `npm run preview` sirve esa exportación en http://127.0.0.1:4177. No es necesario un servidor Node en producción.
+Abre [http://127.0.0.1:4177](http://127.0.0.1:4177). `build` genera la web en `out/` y `preview` la sirve con Python. Mantén esta terminal abierta y detén el servidor con **Ctrl+C**. Después de modificar los fuentes, vuelve a ejecutar `npm run build` para actualizar esta vista previa.
 
-Pruebas E2E con Chrome instalado y la vista previa activa:
+El proyecto usa `output: 'export'`: para esta versión utiliza `npm run preview` en lugar de `next start`. Tampoco abras `out/index.html` directamente mediante `file://`; la exportación necesita servirse por HTTP para resolver sus recursos correctamente.
+
+### Comandos de comprobación
+
+| Comando | Qué comprueba |
+| --- | --- |
+| `npm run typecheck` | Tipos de TypeScript |
+| `npm run lint` | Reglas de ESLint |
+| `npm run test:unit` | Catálogo, formatos y servicios |
+| `npm run build` | Compilación y exportación de producción |
+| `npm test` | Recorridos E2E con Playwright y Google Chrome |
+
+Para ejecutar las pruebas E2E, instala Google Chrome y mantén `npm run preview` activo en otra terminal. Después, desde la raíz del proyecto:
 
 ```sh
 npm test
 ```
 
-Se puede cambiar el origen de pruebas con `BASE_URL`. Las pruebas de formulario interceptan las peticiones: no envían mensajes reales.
+Las pruebas apuntan a `http://127.0.0.1:4177`. Se puede cambiar ese origen mediante la variable `BASE_URL`. Las pruebas del formulario interceptan sus peticiones y no envían mensajes reales.
+
+### Problemas habituales
+
+- **Versión de Node incompatible:** actualiza a una versión que cumpla `>=22.13.0` y ejecuta `npm ci` de nuevo.
+- **`python3` no encontrado:** instala Python 3 para la vista previa estática o utiliza `npm run dev` para trabajar en desarrollo.
+- **Puerto ocupado:** detén el proceso que esté usando el puerto 3000 (desarrollo) o 4177 (vista previa), y vuelve a iniciar el comando correspondiente.
+- **Faltan dependencias:** confirma que estás en la carpeta que contiene `package.json` y ejecuta `npm ci`.
+- **La vista previa conserva una versión anterior:** vuelve a compilar con `npm run build` y recarga el navegador.
 
 ## Proyectos y formatos
 
