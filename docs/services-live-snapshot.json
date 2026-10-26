@@ -1,0 +1,79 @@
+{
+  "url": "https://alexurresty.com/",
+  "verifiedOn": "2026-10-26",
+  "services": [
+    {
+      "id": "corporativo",
+      "title": "Video corporativo",
+      "short": "Entrevistas, instalaciones, demos de producto y eventos. Piezas que muestran con claridad lo que hace tu empresa.",
+      "includes": "Incluye videos institucionales, testimonios, demos y eventos.",
+      "long": [
+        "Grabación y edición de contenido corporativo: entrevistas, recorridos de instalaciones, demos de producto y cobertura de eventos.",
+        "Antes de encender la cámara, el primer paso es entender el negocio. Cada pieza tiene un objetivo concreto: generar confianza, explicar lo que haces o abrir una conversación comercial.",
+        "Entregables: videos institucionales, testimonios de clientes, recorridos, demos técnicas y resúmenes de eventos, con fechas claras desde el inicio."
+      ],
+      "video": "videos/corporativo.mp4",
+      "poster": "videos/corporativo.webp",
+      "landscape": true
+    },
+    {
+      "id": "redes",
+      "title": "Estrategia de contenido",
+      "short": "Qué publicar, para quién y para qué: estrategia, guiones y producción continua para vender, educar o posicionar tu marca.",
+      "includes": "Incluye estrategia, calendario, guiones, grabación y edición para Reels, TikTok y Shorts.",
+      "long": [
+        "El punto de partida es qué quiere lograr tu marca en redes y a quién le habla. Desde ahí salen el formato, la frecuencia y la plataforma.",
+        "Un sistema de trabajo claro: análisis de audiencia, formatos que ya funcionan y producción constante.",
+        "Entregables: guiones, grabación y edición de Reels, TikTok y YouTube Shorts, con calendario de publicación."
+      ],
+      "videos": [
+        {
+          "src": "videos/redes-4.mp4",
+          "poster": "videos/redes-4.webp"
+        },
+        {
+          "src": "videos/redes-egepud.mp4",
+          "poster": "videos/redes-egepud.webp"
+        },
+        {
+          "src": "videos/riverita-leche-de-tigre.mp4",
+          "poster": "videos/riverita-leche-de-tigre.webp"
+        },
+        {
+          "src": "videos/redes-2.mp4",
+          "poster": "videos/redes-2.webp"
+        },
+        {
+          "src": "videos/redes-3.mp4",
+          "poster": "videos/redes-3.webp"
+        }
+      ]
+    },
+    {
+      "id": "streaming",
+      "title": "Streaming",
+      "short": "Transmisiones para eventos, lanzamientos y clases, con montaje técnico y dirección en tiempo real.",
+      "includes": "Para eventos, lanzamientos y clases, con montaje multicámara.",
+      "long": [
+        "Producción de transmisiones para eventos, lanzamientos de producto y clases en línea.",
+        "En una transmisión no hay segunda toma. Por eso cada emisión sale al aire con señal, imagen y audio probados de antemano, y con equipos conocidos a fondo.",
+        "Entregables: producción del evento, dirección en tiempo real, configuración de YouTube, Zoom, StreamYard u OBS, y la grabación para publicar después."
+      ],
+      "video": "videos/streaming.mp4",
+      "poster": "videos/streaming.webp"
+    },
+    {
+      "id": "podcast",
+      "title": "Podcast",
+      "short": "Del formato a la publicación: grabación multicámara, edición, cortes para redes y distribución.",
+      "includes": "Incluye formato, grabación multicámara, edición, cortes y distribución.",
+      "long": [
+        "El podcast completo, de principio a fin: formato del programa, montaje de audio y video, grabación, edición y publicación.",
+        "Un buen podcast posiciona a quien habla y genera material para redes durante meses.",
+        "Entregables: diseño del formato, grabación multicámara, edición de episodios, cortes para Reels y TikTok, y publicación en Spotify, Apple Podcasts y YouTube."
+      ],
+      "video": "videos/podcast.mp4",
+      "poster": "videos/podcast.webp"
+    }
+  ]
+}

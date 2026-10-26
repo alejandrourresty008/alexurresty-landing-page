@@ -1,0 +1,158 @@
+[
+  {
+    "src": "videos/corporativo.mp4",
+    "width": 1280,
+    "height": 720,
+    "duration": 84
+  },
+  {
+    "src": "videos/hero-1.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 7
+  },
+  {
+    "src": "videos/hero-2.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 7
+  },
+  {
+    "src": "videos/hero-3.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 8
+  },
+  {
+    "src": "videos/omnimedia-experiencia.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 44
+  },
+  {
+    "src": "videos/podcast.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 109
+  },
+  {
+    "src": "videos/proy-riverita.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 55
+  },
+  {
+    "src": "videos/redes-1.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 60
+  },
+  {
+    "src": "videos/redes-2.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 76
+  },
+  {
+    "src": "videos/redes-3.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 55
+  },
+  {
+    "src": "videos/redes-4.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 42
+  },
+  {
+    "src": "videos/redes-egepud.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 30
+  },
+  {
+    "src": "videos/riverita-leche-de-tigre.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 76
+  },
+  {
+    "src": "videos/streaming.mp4",
+    "width": 720,
+    "height": 1280,
+    "duration": 122
+  },
+  {
+    "src": "videos/preview/congreso.mp4",
+    "width": 640,
+    "height": 360,
+    "duration": 4
+  },
+  {
+    "src": "videos/preview/corporativo.mp4",
+    "width": 640,
+    "height": 360,
+    "duration": 5
+  },
+  {
+    "src": "videos/preview/egepud-avance.mp4",
+    "width": 480,
+    "height": 854,
+    "duration": 4
+  },
+  {
+    "src": "videos/preview/egepud-podcast27.mp4",
+    "width": 640,
+    "height": 360,
+    "duration": 5
+  },
+  {
+    "src": "videos/preview/egepud.mp4",
+    "width": 480,
+    "height": 854,
+    "duration": 5
+  },
+  {
+    "src": "videos/preview/elena.mp4",
+    "width": 640,
+    "height": 360,
+    "duration": 4
+  },
+  {
+    "src": "videos/preview/omnimedia.mp4",
+    "width": 480,
+    "height": 854,
+    "duration": 5
+  },
+  {
+    "src": "videos/preview/podcast.mp4",
+    "width": 480,
+    "height": 854,
+    "duration": 4
+  },
+  {
+    "src": "videos/preview/riverita.mp4",
+    "width": 480,
+    "height": 854,
+    "duration": 5
+  },
+  {
+    "src": "videos/preview/salas-zegarra.mp4",
+    "width": 480,
+    "height": 854,
+    "duration": 4
+  },
+  {
+    "src": "videos/preview/silvia.mp4",
+    "width": 480,
+    "height": 854,
+    "duration": 4
+  },
+  {
+    "src": "videos/preview/streaming.mp4",
+    "width": 480,
+    "height": 854,
+    "duration": 4
+  }
+]
