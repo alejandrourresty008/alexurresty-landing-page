@@ -1,7 +1,9 @@
 {
   "name": "alex-urresty",
   "compatibility_date": "2026-10-19",
-  "assets": { "directory": "./out" },
+  // worker/index.js redirige www y http a https://alexurresty.com; el resto lo sirve desde out/
+  "main": "worker/index.js",
+  "assets": { "directory": "./out", "binding": "ASSETS", "run_worker_first": true },
   "routes": [
     { "pattern": "alexurresty.com", "custom_domain": true },
     { "pattern": "www.alexurresty.com", "custom_domain": true }

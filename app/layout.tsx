@@ -6,14 +6,16 @@ const keywords = 'producción audiovisual Lima, producción audiovisual Perú, v
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://alexurresty.com'),
-  title: 'Producción Audiovisual y Video Corporativo en Lima | Alex Urresty',
-  description: 'Producción audiovisual para empresas en Lima y todo el Perú: video corporativo, streaming en vivo, podcast y estrategia de contenido. Tecnología, telecom y sector legal.',
+  // El nombre va primero: es lo que escribe quien busca a Alex en Google
+  title: 'Alex Urresty | Producción audiovisual y video corporativo en Lima',
+  description: 'Alex Urresty, productor y director audiovisual: video corporativo, streaming en vivo, podcast y estrategia de contenido para empresas en Lima y todo el Perú.',
   keywords,
   authors: [{ name: 'Alex Urresty' }],
   robots: { index: true, follow: true, 'max-image-preview': 'large' },
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Producción Audiovisual en Lima | Alex Urresty',
+    title: 'Alex Urresty | Producción audiovisual',
+    siteName: 'Alex Urresty',
     description: 'Video corporativo, streaming en vivo, podcast y estrategia de contenido para empresas de tecnología, telecom y sector legal en Lima y todo el Perú.',
     type: 'website',
     url: '/',

@@ -26,6 +26,6 @@ export default function Home() {
     <FloatingButtons />
     <Modal />
     <Behaviors />
-    {structuredData.map(d => <script key={d['@type']} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(d).replace(/</g, '\\u003c') }} />)}
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }} />
   </>;
 }

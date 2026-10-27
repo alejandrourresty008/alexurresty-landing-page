@@ -1,4 +1,4 @@
-import { instagram, tiktok, whatsapp } from '@/lib/site';
+import { instagram, linkedin, tiktok, whatsapp } from '@/lib/site';
 
 export function Intro() {
   return <div className="intro" id="intro" aria-hidden="true">
@@ -13,6 +13,7 @@ export function Footer() {
       <div className="footer-links">
         <a href={instagram} target="_blank" rel="noopener">Instagram</a>
         <a href={tiktok} target="_blank" rel="noopener">TikTok</a>
+        <a href={linkedin} target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </footer>;
