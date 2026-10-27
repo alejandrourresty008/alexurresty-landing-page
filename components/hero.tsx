@@ -13,7 +13,7 @@ export function Hero() {
         <span className="line"><span>Entiendo tu industria.</span></span>
         <span className="line"><span><span className="accent">Produzco</span> tu historia.</span></span>
       </h1>
-      <p className="hero-sub reveal d2">Producción y dirección audiovisual en Lima para empresas de tecnología, telecom y sector legal. Más de 5 años de experiencia.</p>
+      <p className="hero-sub reveal d2">Producción y dirección audiovisual en Lima para empresas de tecnología, telecom y sector legal.</p>
       <div className="hero-actions reveal d3">
         <a href="#contacto" className="btn">Contáctame</a>
         <a href="#proyectos" className="text-link">Ver proyectos <span aria-hidden="true">→</span></a>
