@@ -7,7 +7,7 @@ export function About() {
       </div>
       <div className="about-text">
         <h2 className="section-title reveal">Detrás de la cámara</h2>
-        <p className="lead reveal d1">Alex Urresty dirige producciones audiovisuales en Lima para empresas de telecomunicaciones, tecnología y educación legal.</p>
+        <p className="lead reveal d1">Alex Urresty dirige producciones audiovisuales para empresas de telecomunicaciones, tecnología y educación legal, desde Lima y en todo el Perú.</p>
         <p className="reveal d2">El trabajo empieza antes de grabar: entender qué necesita comunicar la marca y a quién. Después vienen el formato y el tono, la grabación, la edición y una entrega lista para publicar.</p>
         <p className="reveal d3">Fuera de cámara, baila y enseña marinera desde niño, con la misma disciplina que pone en una línea de tiempo de edición.</p>
       </div>

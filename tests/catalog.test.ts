@@ -39,6 +39,14 @@ test('todas las imágenes y videos referenciados existen en public/', () => {
   assert.deepEqual(missing, []);
 });
 
+test('cada vista previa tiene sus medidas en media-manifest.json (define su forma en la grilla)', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const manifest: { src: string }[] = JSON.parse(await readFile(new URL('../media-manifest.json', import.meta.url), 'utf8'));
+  const known = new Set(manifest.map(m => `/${m.src}`));
+  const missing = [...pieces, ...clients].map(x => x.preview).filter(p => !known.has(p));
+  assert.deepEqual(missing, []);
+});
+
 test('las métricas usan el formato "NK+" y una plataforma conocida', () => {
   clients.flatMap(c => c.metrics ?? []).forEach(m => {
     assert.match(m.value, /^\d+K\+$/);

@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react';
 import { rowTiles, rows, where } from '@/lib/catalog';
 import { ARROW, PLATFORM_ICONS, esc } from '@/lib/icons';
+import { aspect } from '@/lib/media';
 import type { Metric } from '@/lib/types';
 
 interface TileData {
@@ -15,8 +16,9 @@ interface TileData {
 }
 
 function Tile({ t, k }: { t: TileData; k: number }) {
-  const style = { '--k': k, ...(t.focus ? { '--focus': t.focus } : {}) } as CSSProperties;
-  return <article className="tile" {...t.data} style={style} role="button" tabIndex={0} aria-haspopup="dialog">
+  const ar = aspect(t.preview);
+  const style = { '--k': k, '--ar': ar.toFixed(4), ...(t.focus ? { '--focus': t.focus } : {}) } as CSSProperties;
+  return <article className={ar > 1 ? 'tile land' : 'tile'} {...t.data} style={style} role="button" tabIndex={0} aria-haspopup="dialog">
     {/* eslint-disable-next-line @next/next/no-img-element -- exportación estática: las imágenes ya están optimizadas en webp */}
     <img src={t.cover} alt={t.title} loading="lazy" decoding="async" />
     <video className="pv" data-src={t.preview} muted loop playsInline preload="none" aria-hidden="true"></video>

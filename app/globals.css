@@ -623,23 +623,32 @@ p { text-wrap: pretty; }
 .tile:hover .tile-go svg { transform: translateX(3px); }
 .tile:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 
-/* Escritorio: el título del servicio va en su propia franja, encima del panel; los videos siguen ocupando
-   toda la pantalla de borde a borde, como la portada. No toca el celular (max-width: 760px). */
+/* Cada tarjeta conserva la forma real de su video (--ar = ancho/alto, de media-manifest.json): nada se recorta
+   ni se estira. Las horizontales llevan la clase .land. */
+.tile { aspect-ratio: var(--ar, 0.5625); }
+
+/* Escritorio: el título del servicio va en su propia franja, encima del panel. Las tarjetas de una fila comparten
+   la altura y cada una ocupa el ancho que le toca según su forma; la fila mide lo que necesita (máx. 85% de la
+   pantalla, para que un solo video horizontal no se agrande de más). No toca el celular (max-width: 760px). */
 @media (min-width: 761px) {
   .pbento { height: auto; min-height: 0; max-height: none; overflow: visible; display: flex; flex-direction: column; }
   .pbento-head { position: static; order: -1; padding: 0 var(--gutter) clamp(1.25rem, 2.5vw, 2rem); pointer-events: auto; }
   .prow-title { text-shadow: none; }
   .prow-note { color: var(--muted); text-shadow: none; }
-  .bento { position: relative; inset: auto; height: 100svh; min-height: 560px; max-height: 1000px; }
+  .bento { position: relative; inset: auto; justify-content: center; align-items: flex-start; }
+  .tile { flex: var(--ar, 0.5625) 1 0; max-width: calc(85svh * var(--ar, 0.5625)); }
   .tile::after { background: linear-gradient(to top, rgba(13,20,35,0.9) 0%, rgba(13,20,35,0.35) 28%, rgba(13,20,35,0) 50%); }
 }
 
-/* Celular: el panel sigue ocupando la pantalla; las piezas se reparten en dos columnas sin huecos */
+/* Celular: verticales de a dos; horizontales a todo el ancho, después de las verticales.
+   Si la fila solo tiene horizontales, el título va encima (no sobre el video, que es bajo). */
 @media (max-width: 760px) {
-  .pbento { max-height: none; }
-  .bento { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; }
-  .bento.n1 .tile, .bento.n3 .tile:first-child { grid-column: 1 / -1; }
-  .bento.n2 { grid-template-columns: 1fr 1fr; }
+  .pbento { height: auto; min-height: 0; max-height: none; }
+  .bento { position: relative; inset: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bento.n1 .tile, .tile.land { grid-column: 1 / -1; }
+  .tile.land { order: 1; }
+  .pbento:not(:has(.tile:not(.land))) { display: flex; flex-direction: column; overflow: visible; }
+  .pbento:not(:has(.tile:not(.land))) .pbento-head { position: static; order: -1; padding-top: 0; }
   .tile-info { padding: 0.8rem 0.85rem 2.8rem; }
   .tile-meta { font-size: 0.74rem; }
   .tile-metric { font-size: 0.7rem; padding: 0.22rem 0.55rem; }

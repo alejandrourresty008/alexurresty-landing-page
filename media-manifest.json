@@ -85,14 +85,14 @@
   },
   {
     "src": "videos/preview/congreso.mp4",
-    "width": 640,
-    "height": 360,
+    "width": 1280,
+    "height": 720,
     "duration": 4
   },
   {
     "src": "videos/preview/corporativo.mp4",
-    "width": 640,
-    "height": 360,
+    "width": 1280,
+    "height": 720,
     "duration": 5
   },
   {
@@ -115,8 +115,8 @@
   },
   {
     "src": "videos/preview/elena.mp4",
-    "width": 640,
-    "height": 360,
+    "width": 1280,
+    "height": 720,
     "duration": 4
   },
   {

@@ -17,6 +17,11 @@ test('carga sin errores y con todo el contenido ya en el HTML', async ({ page })
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Produzco tu historia.');
   await expect(page.locator('#project-rows .pbento')).toHaveCount(4);
   await expect(page.locator('#project-rows .tile')).toHaveCount(11);
+  // Las piezas horizontales conservan su forma 16:9 (no se recortan a vertical)
+  const land = page.locator('#project-rows .tile.land');
+  await expect(land).toHaveCount(3);
+  const box = await land.first().boundingBox();
+  expect(box!.width / box!.height).toBeCloseTo(16 / 9, 1);
   await expect(page.locator('.service-row')).toHaveCount(4);
   await expect(page.locator('#intro')).toHaveCount(0, { timeout: 5000 });
   expect(errors).toEqual([]);
