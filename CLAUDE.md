@@ -40,6 +40,7 @@ Publicar solo cuando Alex lo pida. Alex quiere ver los cambios en local antes.
 
 ## Cuidados
 
-- La web en vivo sale de ESTE proyecto (rama `web-oficial`). La rama `main` de GitHub (`alejandrourresty008/alexurresty-landing-page`) todavía tiene la versión antigua de un solo `index.html`. **No conectar la publicación automática de Cloudflare a `main` hasta subir esta versión**, o se pisaría la web actual.
+- La web en vivo sale de ESTE proyecto, rama `web-oficial`, que también está en GitHub (`alejandrourresty008/alexurresty-landing-page`, rama `web-oficial`). La rama `main` de GitHub conserva la versión antigua de un solo `index.html` y no se debe usar para publicar. Si se conecta la publicación automática de Cloudflare a GitHub, conectar la rama `web-oficial`, nunca `main`, o se pisaría la web actual.
+- Después de cada cambio publicado: `git commit` y `git push` de `web-oficial`, para que GitHub quede igual que la web.
 - No enviar mensajes reales al probar el formulario (va a una hoja de Google).
 - Respaldo anterior de un solo archivo: `D:\ALEX\WEB ALEX URRESTY\index.html` (ya no es la fuente).
