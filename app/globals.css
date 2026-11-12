@@ -770,7 +770,7 @@ p { text-wrap: pretty; }
   position: relative;
 }
 
-.about-photo img { width: 100%; height: 100%; object-fit: cover; }
+.about-photo img, .about-photo video { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .about-text .section-title { margin-bottom: 2rem; }
 
@@ -1053,7 +1053,8 @@ p { text-wrap: pretty; }
 .modal-close svg { width: 16px; height: 16px; }
 
 /* En la ventana, el sonido va arriba a la izquierda para no chocar con la descripción */
-.modal .vp-sound { top: 14px; left: 14px; right: auto; bottom: auto; }
+.modal .vp-sound { top: 14px; left: 14px; right: auto; bottom: auto; width: 46px; height: 46px; }
+.modal .vp-sound svg { width: 22px; height: 22px; }
 .modal .car-dots { top: 20px; }
 .modal .vp-bar { z-index: 4; }
 
@@ -1061,45 +1062,42 @@ p { text-wrap: pretty; }
   position: absolute;
   left: 0; right: 0; bottom: 0;
   z-index: 3;
-  padding: 3.5rem 1.25rem 1.2rem;
-  max-height: 78%;
+  padding: 2.4rem 1.1rem 0.9rem;
+  max-height: 52%;
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-width: none;
-  background: linear-gradient(to top, rgba(8,12,22,0.62) 0%, rgba(8,12,22,0.3) 55%, rgba(8,12,22,0) 100%);
+  background: linear-gradient(to top, rgba(8,12,22,0.5) 0%, rgba(8,12,22,0.18) 60%, rgba(8,12,22,0) 100%);
   text-shadow: 0 1px 10px rgba(0,0,0,0.55); /* el texto se lee sin tapar el video */
   cursor: pointer;
   transition: background 0.5s ease;
 }
 .modal-info::-webkit-scrollbar { display: none; }
 .modal-info.expanded {
-  padding-top: 2.5rem;
-  background: linear-gradient(to top, rgba(8,12,22,0.97) 0%, rgba(8,12,22,0.9) 75%, rgba(8,12,22,0.6) 100%);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  padding-top: 2.6rem;
+  background: linear-gradient(to top, rgba(8,12,22,0.95) 0%, rgba(8,12,22,0.9) 82%, rgba(8,12,22,0) 100%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   cursor: default;
 }
 
 .modal-title {
-  font-size: clamp(1.35rem, 2.4vw, 1.6rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
   font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  margin-bottom: 0.45rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.15rem;
 }
-.modal-desc {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.modal-desc p { color: #D8DBE5; font-size: 0.95rem; line-height: 1.55; margin-bottom: 0.6rem; }
+/* Cerrada, solo se ve el título y "Ver más": la descripción aparece al desplegar */
+.modal-desc { display: none; }
+.modal-desc p { color: #D8DBE5; font-size: 0.9rem; line-height: 1.55; margin-bottom: 0.5rem; }
 .modal-desc .client-tags { color: var(--text); }
-.modal-info.expanded .modal-desc { display: block; overflow: visible; }
+.modal-info.expanded .modal-desc { display: block; margin-top: 0.4rem; }
+.modal-info.expanded { max-height: 56%; }
 
 .modal-more {
   background: none; border: 0; padding: 0.15rem 0;
-  color: var(--text); font: inherit; font-size: 0.9rem; font-weight: 700;
+  color: #D8DBE5; font: inherit; font-size: 0.82rem; font-weight: 500;
   cursor: pointer;
 }
 .modal-more::after { content: ' ▾'; font-size: 0.8em; }
@@ -1108,19 +1106,44 @@ p { text-wrap: pretty; }
 .modal-extra { display: none; }
 .modal-info.expanded .modal-extra { display: block; animation: extra-in 0.6s var(--ease-out); }
 @keyframes extra-in { from { opacity: 0; transform: translateY(8px); } }
-.modal-includes { color: var(--muted); font-size: 0.9rem; margin: 0.9rem 0 1.1rem; }
+.modal-includes { color: var(--muted); font-size: 0.85rem; margin: 0.6rem 0 0.9rem; }
 
 /* El texto entra un instante después del video */
 .modal-info > * { opacity: 0; transform: translateY(8px); transition: opacity 0s, transform 0s; }
 .modal.open .modal-info > * { opacity: 1; transform: none; transition: opacity 0.7s ease 0.25s, transform 0.9s var(--ease-out) 0.25s; }
 
 /* Video horizontal: la ventana toma su forma 16:9 */
-.modal.landscape .modal-stage { aspect-ratio: 16 / 9; height: auto; width: min(1180px, 94vw); max-height: 88dvh; }
-.modal.landscape .modal-info { max-height: 70%; }
+/* Video horizontal: el video arriba y la descripción DEBAJO (no encima), sobre fondo sólido */
+.modal.landscape .modal-stage {
+  aspect-ratio: auto; height: auto; width: min(1100px, 94vw); max-height: 94dvh;
+  background: var(--bg-2);
+  display: flex; flex-direction: column;
+}
+.modal.landscape .modal-video { position: relative; inset: auto; width: 100%; aspect-ratio: 16 / 9; flex: none; }
+.modal.landscape .modal-info {
+  position: relative; left: auto; right: auto; bottom: auto;
+  max-height: none; overflow-y: auto;
+  padding: 1rem 1.25rem 1.2rem;
+  background: none; backdrop-filter: none; -webkit-backdrop-filter: none; text-shadow: none;
+}
 
 @media (max-width: 640px) {
   .modal-stage { height: 100dvh; width: 100vw; aspect-ratio: auto; border-radius: 0; }
-  .modal.landscape .modal-stage { width: 100vw; height: auto; border-radius: 0; }
+  .modal-info { max-height: 52%; }
+  .modal-info.expanded { max-height: 56%; }
+  /* Video horizontal en celular: el video arriba y la descripción DEBAJO (no encima), sobre fondo sólido */
+  .modal.landscape .modal-stage {
+    width: 100vw; height: auto; aspect-ratio: auto; max-height: 100dvh;
+    border-radius: 0; background: var(--bg-2);
+    display: flex; flex-direction: column;
+  }
+  .modal.landscape .modal-video { position: relative; inset: auto; width: 100%; aspect-ratio: 16 / 9; flex: none; }
+  .modal.landscape .modal-info {
+    position: relative; left: auto; right: auto; bottom: auto;
+    max-height: none; overflow-y: auto;
+    padding: 1.1rem 1.25rem calc(1.4rem + env(safe-area-inset-bottom));
+    background: none; backdrop-filter: none; -webkit-backdrop-filter: none; text-shadow: none;
+  }
   .modal-info { padding-bottom: calc(1.4rem + env(safe-area-inset-bottom)); }
 }
 

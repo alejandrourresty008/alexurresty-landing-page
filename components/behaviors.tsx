@@ -20,7 +20,7 @@ interface Ctx {
 
 /* ─── CARRUSEL Y VENTANA ─── */
 
-let soundOn = false; // se recuerda entre videos mientras la página esté abierta
+let soundOn = true; // las ventanas se abren con un toque del usuario, así que el video puede sonar de entrada; se recuerda entre videos
 
 // Precarga por intención: al acercar el mouse (o el dedo) se empieza a descargar el primer video,
 // y al abrir la ventana se reutiliza ese mismo elemento ya cargado.
@@ -94,7 +94,8 @@ function initCarousel(box: HTMLElement) {
       load(v, true);
       v.muted = !soundOn;
       v.currentTime = 0;
-      play(v);
+      // Si el navegador no deja reproducir con sonido, arranca en silencio y deja el botón para activarlo
+      v.play().catch(() => { if (!v.muted) { v.muted = true; soundOn = false; setSoundIcons(); play(v); } });
     } else if (last > 0) {
       timer = window.setTimeout(() => go(i + 1), 7000); // fotos y enlaces también avanzan solos
     }
@@ -310,6 +311,15 @@ function initProjects({ signal, observe }: Ctx) {
 }
 
 /* ─── NAV ─── */
+/* ─── VIDEO DE "SOBRE MÍ": se reproduce solo mientras está en pantalla ─── */
+function initAboutVideo({ observe }: Ctx) {
+  const v = document.querySelector<HTMLVideoElement>('[data-about-video]');
+  if (!v || reducedMotion()) return;
+  observe(new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { v.preload = 'auto'; play(v); } else v.pause();
+  }, { threshold: 0.35 })).observe(v);
+}
+
 function initNav({ signal, observe }: Ctx) {
   const nav = $('nav');
   const wa = $('wa-float');
@@ -547,6 +557,7 @@ export function Behaviors() {
     initNav(ctx);
     initContactForm(ctx);
     initHeroVideos(ctx);
+    initAboutVideo(ctx);
     runIntro(ctx, () => { initReveal(ctx); initProjTitle(ctx); });
 
     return () => {

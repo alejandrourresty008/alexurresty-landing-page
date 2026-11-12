@@ -29,7 +29,7 @@ Publicar solo cuando Alex lo pida. Alex quiere ver los cambios en local antes.
 
 ## Decisiones de Alex (no revertir)
 
-- Ningún texto en primera persona, salvo la frase de portada: "Entiendo tu industria. Produzco tu historia."
+- Ningún texto en primera persona, salvo la frase de portada ("Entiendo tu industria. Produzco tu historia.") y la descripción de "Sobre mí", que Alex pidió en primera persona, corta y sin mencionar baile.
 - Servicio se llama "Estrategia de contenido" (no "Contenido para redes"). Solo "Streaming", sin "en vivo" a la vista.
 - Orden: Proyectos antes que Servicios. Botón de portada: "Ver proyectos".
 - No poner "Más de 5 años de experiencia". Ubicación: "desde Lima para todo el Perú".
