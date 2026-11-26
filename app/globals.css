@@ -641,20 +641,29 @@ p { text-wrap: pretty; }
 }
 
 /* Celular: verticales de a dos; horizontales a todo el ancho, después de las verticales.
-   Si la fila solo tiene horizontales, el título va encima (no sobre el video, que es bajo). */
+   El título del servicio va siempre en su propia franja, encima de los videos (como en escritorio), y cada
+   tarjeta muestra solo sector, nombre y cifras, con una flechita discreta que indica que se puede abrir. */
 @media (max-width: 760px) {
-  .pbento { height: auto; min-height: 0; max-height: none; }
+  .pbento { height: auto; min-height: 0; max-height: none; display: flex; flex-direction: column; overflow: visible; }
+  .pbento-head { position: static; order: -1; padding: 0 var(--gutter) 1rem; pointer-events: auto; }
+  .prow-title { font-size: clamp(1.7rem, 8vw, 2.2rem); text-shadow: none; }
+  .prow-note { color: var(--muted); text-shadow: none; margin-top: 0.3rem; }
+  .tile::after { background: linear-gradient(to top, rgba(13,20,35,0.9) 0%, rgba(13,20,35,0.35) 30%, rgba(13,20,35,0) 52%); }
+  .tile-badge { display: none; }
+  .tile-go::before { content: none; }
+  .tile-go {
+    left: auto; right: 10px; bottom: 12px;
+    width: 26px; height: 26px; justify-content: center;
+    border-radius: 50%; background: rgba(242,240,236,0.14);
+  }
+  .tile-go svg { width: 13px; height: 13px; }
   .bento { position: relative; inset: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .bento.n1 .tile, .tile.land { grid-column: 1 / -1; }
   .tile.land { order: 1; }
-  .pbento:not(:has(.tile:not(.land))) { display: flex; flex-direction: column; overflow: visible; }
-  .pbento:not(:has(.tile:not(.land))) .pbento-head { position: static; order: -1; padding-top: 0; }
-  .tile-info { padding: 0.8rem 0.85rem 2.8rem; }
+  .tile-info { padding: 0.8rem 2.6rem 0.9rem 0.85rem; }
   .tile-meta { font-size: 0.74rem; }
   .tile-metric { font-size: 0.7rem; padding: 0.22rem 0.55rem; }
   .tile-title { font-size: 0.98rem; }
-  .tile-go { left: 0.85rem; bottom: 12px; }
-  .tile-badge { right: 8px; bottom: 10px; }
 }
 
 .project { cursor: pointer; -webkit-tap-highlight-color: transparent; display: flex; flex-direction: column; }
